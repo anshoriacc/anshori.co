@@ -18,7 +18,7 @@ const Container = (props: any) => {
   };
 
   return (
-    <main className="min-h-[100vh] max-w-[960px] mx-auto">
+    <main className="min-h-[100vh] max-w-[800px] mx-auto">
       <Head>
         <title>{meta.title}</title>
         <link rel="icon" href="/favicon.ico" />

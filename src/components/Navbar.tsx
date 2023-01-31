@@ -60,7 +60,7 @@ const Navbar = () => {
       <button
         onClick={toggleThemeHandler}
         title="toggle theme"
-        className="p-1 rounded-full font-black text-2xl cursor-pointer"
+        className="p-1 rounded-full font-black text-2xl cursor-pointer text-yellow-400"
       >
         {myTheme === 'dark' ? <FaSun /> : <FaMoon />}
       </button>

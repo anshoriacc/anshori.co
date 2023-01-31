@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Reducers } from 'src/redux/types';
+import cn from 'classnames';
 
 const ThemeWrapper = ({ children }: { children: ReactNode }) => {
   const theme = useSelector((state: Reducers) => state.theme);
@@ -12,7 +13,12 @@ const ThemeWrapper = ({ children }: { children: ReactNode }) => {
 
   return (
     <div className={myTheme}>
-      <div className="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-all">
+      <div
+        className={cn(
+          'bg-white text-gray-800 transition-all',
+          'dark:bg-gray-900 dark:text-gray-100'
+        )}
+      >
         {children}
       </div>
     </div>
