@@ -1,17 +1,14 @@
-import HeadComponent from '@components/HeadComponent';
-import type {NextPage} from 'next';
+import type { NextPage } from 'next';
+
+import Container from '@components/Container';
+import Hero from '@components/Home/Hero';
 
 const Home: NextPage = () => {
-	return (
-		<>
-			<HeadComponent />
-			<h1>
-				<span>achmad</span>
-				<br />
-				<span>anshori/</span>
-			</h1>
-		</>
-	);
+  return (
+    <Container>
+      <Hero />
+    </Container>
+  );
 };
 
 export default Home;
