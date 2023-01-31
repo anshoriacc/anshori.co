@@ -27,8 +27,9 @@ const Hero: NextPage = () => {
         href="/resume.pdf"
         download="resume-achmad-anshori"
         className={cn(
-          'p-2 rounded-lg flex gap-1 items-center text-sm transition-all bg-white',
-          'dark:bg-gray-900'
+          'jutify-self-auto p-2 rounded-lg flex gap-1 items-center transition-all border-2 bg-white border-white',
+          'dark:bg-gray-900 dark:border-gray-900',
+          'hover:border-gray-200 dark:hover:border-gray-700'
         )}
       >
         <BiDownload />
