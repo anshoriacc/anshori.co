@@ -7,7 +7,7 @@ import Clock from './Clock';
 
 const Hero: NextPage = () => {
   return (
-    <div
+    <section
       className={cn(
         'p-4 flex justify-between gap-4 items-center transition-all bg-gray-0 rounded-2xl',
         'dark:bg-gray-850'
@@ -34,7 +34,7 @@ const Hero: NextPage = () => {
         <BiDownload />
         Resume
       </a>
-    </div>
+    </section>
   );
 };
 

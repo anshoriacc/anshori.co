@@ -6,7 +6,7 @@ const Footer = () => {
       <p>© {date.getFullYear()} Achmad Anshori</p>
       <span>🔷</span>
       <a
-        href="https://github.com/anshoriacc"
+        href="https://github.com/anshoriacc/anshori.io"
         target="_blank"
         rel="noopener noreferrer"
         className="font-semibold hover:animate-pulse"
