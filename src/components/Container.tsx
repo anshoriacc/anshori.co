@@ -12,7 +12,7 @@ const Container = (props: any) => {
   const theme = useSelector((state: Reducers) => state.theme);
 
   const meta = {
-    title: 'Achmad Anshori – Software Engineer.',
+    title: 'Achmad Anshori',
     description: 'a Software Engineer, Frontend.',
     ...customMeta,
   };
