@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useSelector } from 'react-redux';
-import { Reducers } from 'src/redux/types';
 
 import Footer from './Footer';
 import Navbar from './Navbar';
@@ -9,7 +7,6 @@ import Navbar from './Navbar';
 const Container = (props: any) => {
   const { children, ...customMeta } = props;
   const router = useRouter();
-  const theme = useSelector((state: Reducers) => state.theme);
 
   const meta = {
     title: 'Achmad Anshori',
@@ -39,8 +36,7 @@ const Container = (props: any) => {
         <meta name="twitter:description" content={meta.description} />
       </Head>
       <Navbar />
-      {/* <hr className="border-gray-100 dark:border-gray-800 transition-all" /> */}
-      <section className="min-h-[calc(100vh-123px)] p-4">{children}</section>
+      <section className="min-h-[calc(100vh-148px)] p-4">{children}</section>
       <Footer />
     </main>
   );

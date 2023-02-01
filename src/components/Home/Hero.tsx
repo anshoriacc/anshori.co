@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 import cn from 'classnames';
 
-import { BiDownload } from 'react-icons/bi';
+import { BiCurrentLocation, BiDownload } from 'react-icons/bi';
 
-import Clock from './Clock';
+import Links from './Links';
 
 const Hero: NextPage = () => {
   return (
@@ -13,28 +13,41 @@ const Hero: NextPage = () => {
         'dark:bg-gray-850'
       )}
     >
-      <div>
+      <div className="left">
         <div className="flex gap-2 items-baseline">
-          <h1 className="font-serif text-2xl font-bold">Achmad Anshori</h1>
-          <h2 className="text-gray-500 text-lg italic">arik</h2>
+          <h1 className={cn('font-serif text-lg font-bold', 'sm:text-2xl')}>
+            Achmad Anshori
+          </h1>
+          <h2 className={cn('text-gray-500 text-base italic', 'sm:text-lg')}>
+            arik
+          </h2>
         </div>
-        <p className="text-gray-500 text-lg italic">Software Engineer</p>
-        <p className="-ml-1 text-gray-500">
-          📍Malang, Indonesia (UTC+7) <Clock />
+        <p className={cn('text-gray-500 text-base italic', 'sm:text-lg')}>
+          Software Engineer
         </p>
+        <p className="text-gray-500 flex gap-1 items-center">
+          <span className="text-sky-800">
+            <BiCurrentLocation />
+          </span>
+          Malang, Indonesia
+        </p>
+        <Links />
       </div>
-      <a
-        href="/resume.pdf"
-        download="resume-achmad-anshori"
-        className={cn(
-          'jutify-self-auto p-2 rounded-lg flex gap-1 items-center transition-all border-2 bg-white border-white',
-          'dark:bg-gray-900 dark:border-gray-900',
-          'hover:border-gray-200 dark:hover:border-gray-700'
-        )}
-      >
-        <BiDownload />
-        Resume
-      </a>
+      <div className="right">
+        <a
+          href="/resume.pdf"
+          download="resume-achmad-anshori"
+          title="download resume"
+          className={cn(
+            'jutify-self-auto p-2 rounded-lg flex gap-1 items-center transition-all border-2 bg-white border-white',
+            'dark:bg-gray-900 dark:border-gray-900',
+            'hover:border-gray-200 dark:hover:border-gray-700'
+          )}
+        >
+          <BiDownload />
+          <span className={cn('hidden', 'sm:inline')}>Resume</span>
+        </a>
+      </div>
     </section>
   );
 };
