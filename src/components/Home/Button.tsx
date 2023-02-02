@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { NextPage } from 'next';
 import cn from 'classnames';
-import { BiLinkExternal } from 'react-icons/bi';
 
 interface ButtonProps {
   name: string;

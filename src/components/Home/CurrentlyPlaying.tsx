@@ -1,9 +1,8 @@
-import axios from 'axios';
 import cn from 'classnames';
-import { useEffect } from 'react';
 import useSWR from 'swr';
 
 import { FaSpotify } from 'react-icons/fa';
+
 import fetcher from 'src/lib/fetcher';
 
 const CurrentlyPlaying = () => {

@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
+
 import { FaExternalLinkAlt, FaMoon, FaSun } from 'react-icons/fa';
+
 import { toggleTheme } from 'src/redux/actions';
 import { useAppDispatch } from 'src/redux/store';
 import { Reducers } from 'src/redux/types';
-import { useRouter } from 'next/router';
+
 
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();

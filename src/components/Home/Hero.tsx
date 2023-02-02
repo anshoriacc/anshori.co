@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import cn from 'classnames';
 
-import { BiCurrentLocation, BiDownload } from 'react-icons/bi';
+import { BiCurrentLocation } from 'react-icons/bi';
 
 import Buttons from './Buttons';
 

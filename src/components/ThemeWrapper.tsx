@@ -1,7 +1,8 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Reducers } from 'src/redux/types';
 import cn from 'classnames';
+
+import { Reducers } from 'src/redux/types';
 
 const ThemeWrapper = ({ children }: { children: ReactNode }) => {
   const theme = useSelector((state: Reducers) => state.theme);
