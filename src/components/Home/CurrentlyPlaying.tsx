@@ -7,7 +7,7 @@ import { FaSpotify } from 'react-icons/fa';
 import fetcher from 'src/lib/fetcher';
 
 const CurrentlyPlaying = () => {
-  const { data, isLoading } = useSWR('/api/currently-playing', fetcher);
+  const { data, isLoading, error } = useSWR('/api/currently-playing', fetcher);
 
   return (
     <div
@@ -20,9 +20,9 @@ const CurrentlyPlaying = () => {
         <FaSpotify />
       </span>
       {isLoading ? (
-        <div className="animate-pulse grow bg-gray-500 rounded-full h-6"></div>
+        <div className="animate-pulse grow bg-gray-500 rounded h-6"></div>
       ) : (
-        <p>
+        <p className="text-ellipsis">
           {data?.isPlaying ? (
             <a
               href={data.songUrl}
