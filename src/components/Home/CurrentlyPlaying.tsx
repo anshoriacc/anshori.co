@@ -13,7 +13,7 @@ const CurrentlyPlaying = () => {
     <div
       className={cn(
         'group relative h-[8rem] p-4 flex justify-start gap-2 items-center text-xl transition-all rounded-2xl cursor-default bg-gray-0 border-2 border-white',
-        'dark:bg-gray-850 dark:border-gray-900',
+        'dark:bg-gray-850 dark:border-gray-900'
       )}
     >
       <span className="text-[#1ccc5b] text-3xl">
