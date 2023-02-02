@@ -28,7 +28,7 @@ const CurrentlyPlaying = () => {
               href={data.songUrl}
               target="_blank"
               rel="noopener noreferrer"
-              title={`play ${data.title} in spotify web player`}
+              title={`open ${data.title} by ${data.artist} in spotify web player`}
             >
               <span className="font-bold">{data.title}</span>
               {` – `}
