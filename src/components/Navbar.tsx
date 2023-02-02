@@ -9,7 +9,6 @@ import { toggleTheme } from 'src/redux/actions';
 import { useAppDispatch } from 'src/redux/store';
 import { Reducers } from 'src/redux/types';
 
-
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();
   const isActive = router.asPath === href;
@@ -46,19 +45,7 @@ const Navbar = () => {
       <div className="flex gap-4 items-center">
         <NavItem href="/" text="Home" />
         <NavItem href="/about" text="About" />
-        <a
-          href="https://github.com/anshoriacc"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-500 hover:text-inherit transition-all"
-        >
-          <span className="flex items-center gap-1">
-            GitHub{' '}
-            <span className="text-sm">
-              <FaExternalLinkAlt />
-            </span>
-          </span>
-        </a>
+        <NavItem href="/projects" text="Projects" />
       </div>
       <button
         onClick={toggleThemeHandler}
