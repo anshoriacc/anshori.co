@@ -9,7 +9,7 @@ const Footer = () => {
         UTC+7 <Clock />
       </p>
       <p>
-        © {date.getFullYear()} Achmad Anshori <span>🔷 </span>
+        © {date.getFullYear()} Achmad Anshori <span>🔹 </span>
         <a
           href="https://github.com/anshoriacc/anshori.io"
           target="_blank"

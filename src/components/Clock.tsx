@@ -49,7 +49,7 @@ const Clock = () => {
   return date ? (
     <span className="flex gap-1 items-center">
       {/* easter egg: the clock shows different icon each hour */}
-      <span className="text-sky-800">
+      <span className="text-xl">
         {hours === '00' || hours === '12' ? (
           <WiTime12 />
         ) : hours === '01' || hours === '13' ? (
