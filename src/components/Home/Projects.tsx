@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import cn from 'classnames';
 
-import { BiLinkExternal } from 'react-icons/bi';
+import { FaLink } from 'react-icons/fa';
 
 const Projects = () => {
   return (
@@ -22,7 +22,7 @@ const Projects = () => {
             'group-hover:visible'
           )}
         >
-          <BiLinkExternal />
+          <FaLink />
         </span>
       </a>
     </Link>
