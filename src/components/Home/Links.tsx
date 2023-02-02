@@ -1,9 +1,6 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
-import cn from 'classnames';
 
 import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { BiLinkExternal } from 'react-icons/bi';
 
 import SocialMedia from './SocialMedia';
 

@@ -42,7 +42,7 @@ const Navbar = () => {
     <nav className="p-4 flex items-center justify-between">
       <div className="flex gap-4 items-center">
         <NavItem href="/" text="Home" />
-        <NavItem href="/projects" text="Projects" />
+        <NavItem href="/about" text="About" />
         <a
           href="https://github.com/anshoriacc"
           target="_blank"

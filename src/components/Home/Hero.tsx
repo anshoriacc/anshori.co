@@ -9,7 +9,7 @@ const Hero: NextPage = () => {
   return (
     <section
       className={cn(
-        'p-4 flex justify-between gap-4 items-center transition-all bg-gray-0 rounded-2xl',
+        'p-4 flex justify-between gap-4 items-center transition-all bg-gray-0 rounded-2xl cursor-default',
         'dark:bg-gray-850'
       )}
     >
@@ -39,12 +39,14 @@ const Hero: NextPage = () => {
           download="resume-achmad-anshori"
           title="download resume"
           className={cn(
-            'jutify-self-auto p-2 rounded-lg flex gap-1 items-center transition-all border-2 bg-white border-white',
+            'jutify-self-auto p-2 h-10 rounded-lg flex gap-1 items-center transition-all border-2 bg-white border-white',
             'dark:bg-gray-900 dark:border-gray-900',
             'hover:border-gray-200 dark:hover:border-gray-700'
           )}
         >
-          <BiDownload />
+          <span className={cn('text-xl', 'sm:text-base')}>
+            <BiDownload />
+          </span>
           <span className={cn('hidden', 'sm:inline')}>Resume</span>
         </a>
       </div>
