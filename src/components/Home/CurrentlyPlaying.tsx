@@ -24,22 +24,24 @@ const CurrentlyPlaying = () => {
         <div className="animate-pulse grow bg-gray-500 rounded-full h-6"></div>
       ) : (
         <p>
-          <a
-            href={data?.isPlaying ? data.songUrl : '#'}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={
-              data?.isPlaying ? `play ${data.title} in spotify web player` : ''
-            }
-          >
-            <span className="font-bold">
-              {data?.isPlaying ? data.title : 'Not Playing'}
-            </span>
-            {` – `}
-            <span className="text-gray-500">
-              {data?.isPlaying ? data.artist : 'Spotify'}
-            </span>
-          </a>
+          {data?.isPlaying ? (
+            <a
+              href={data.songUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`play ${data.title} in spotify web player`}
+            >
+              <span className="font-bold">{data.title}</span>
+              {` – `}
+              <span className="text-gray-500">{data.artist}</span>
+            </a>
+          ) : (
+            <>
+              <span className="font-bold">Not Playing</span>
+              {` – `}
+              <span className="text-gray-500">Spotify</span>
+            </>
+          )}
         </p>
       )}
       <span
