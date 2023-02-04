@@ -6,7 +6,7 @@ import { FaSpotify } from 'react-icons/fa';
 import fetcher from 'src/lib/fetcher';
 
 const CurrentlyPlaying = () => {
-  const { data, isLoading, error } = useSWR('/api/currently-playing', fetcher);
+  const { data, isLoading } = useSWR('/api/currently-playing', fetcher);
 
   return (
     <div

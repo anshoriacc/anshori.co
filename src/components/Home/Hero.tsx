@@ -17,7 +17,9 @@ const Hero: NextPage = () => {
         <h1 className="font-serif text-2xl font-bold">Achmad Anshori</h1>
         <h2 className="text-gray-500 text-lg italic">arik</h2>
       </div>
-      <p className="text-gray-500 text-lg italic">Software Engineer, Frontend</p>
+      <p className="text-gray-500 text-lg italic">
+        Software Engineer, Frontend
+      </p>
       <p className="text-gray-500 flex gap-1 items-center">
         <span className="text-sky-800">
           <BiCurrentLocation />
