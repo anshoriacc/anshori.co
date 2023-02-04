@@ -2,9 +2,9 @@ import type { NextPage } from 'next';
 import cn from 'classnames';
 
 import Container from '@components/Container';
-import Hero from '@components/home/Hero';
-import Projects from '@components/home/Projects';
-import CurrentlyPlaying from '@components/home/CurrentlyPlaying';
+import Hero from '@components/homes/Hero';
+import Projects from '@components/homes/Projects';
+import CurrentlyPlaying from '@components/homes/CurrentlyPlaying';
 
 const Home: NextPage = () => {
   return (
