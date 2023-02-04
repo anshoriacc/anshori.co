@@ -17,7 +17,9 @@ const Container = (props: any) => {
   return (
     <main className="min-h-[100vh] max-w-[768px] mx-auto">
       <Head>
-        <title>{meta.title}</title>
+        <title>
+          {props.title ? `${props.title} | Achmad Anshori` : meta.title}
+        </title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={`https://anshori.io${router.asPath}`} />
         <meta name="description" content={meta.description} />

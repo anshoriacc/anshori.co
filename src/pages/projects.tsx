@@ -5,9 +5,7 @@ import Container from '@components/Container';
 const Projects: NextPage = () => {
   return (
     <>
-      <Container>
-        Projects
-      </Container>
+      <Container title="Projects">Projects</Container>
     </>
   );
 };
