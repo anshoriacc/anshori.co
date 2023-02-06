@@ -4,7 +4,7 @@ const Footer = () => {
   const date = new Date();
 
   return (
-    <footer className="p-4 flex flex-col gap-1 items-center cursor-default">
+    <footer className="p-4 flex flex-col gap-1 items-center">
       <p className="flex gap-1 items-center">
         UTC+7 <Clock />
       </p>

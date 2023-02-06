@@ -34,7 +34,7 @@ const Card = ({ data }: { data: dataProps }) => {
           >
             <h2
               className={cn(
-                'text-lg font-bold transition-all',
+                'text-lg font-bold transition-all line-clamp-1',
                 'hover:underline'
               )}
             >
