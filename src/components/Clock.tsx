@@ -22,9 +22,9 @@ import {
 } from 'react-icons/wi';
 
 const Clock = () => {
-  const [hydrated, setHydrated] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [date, setDate] = useState(() => {
-    if (hydrated) return dayjs().tz('Asia/Jakarta');
+    if (mounted) return dayjs().tz('Asia/Jakarta');
   });
 
   const refreshClock = () => setDate(dayjs().tz('Asia/Jakarta'));
@@ -38,12 +38,12 @@ const Clock = () => {
   }, [date]);
 
   useEffect(() => {
-    setHydrated(() => true);
-    if (hydrated) refreshClock();
-  }, [hydrated]);
+    setMounted(() => true);
+    if (mounted) refreshClock();
+  }, [mounted]);
 
   useEffect(() => {
-    if (hydrated) {
+    if (mounted) {
       const timerId = setInterval(refreshClock, 1000);
 
       return () => {

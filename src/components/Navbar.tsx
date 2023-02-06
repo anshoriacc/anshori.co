@@ -29,7 +29,10 @@ function NavItem({ href, text }: { href: string; text: string }) {
 const Navbar = () => {
   const dispatch = useAppDispatch();
   const theme = useSelector((state: Reducers) => state.theme);
-  const [myTheme, setMyTheme] = useState<string>('');
+  const [mounted, setMounted] = useState(false);
+  const [myTheme, setMyTheme] = useState(() => {
+    if (mounted) return theme;
+  });
 
   const toggleThemeHandler = useCallback(
     () => dispatch(toggleTheme()),
@@ -37,8 +40,9 @@ const Navbar = () => {
   );
 
   useEffect(() => {
-    setMyTheme(theme);
-  }, [theme]);
+    setMounted(() => true);
+    if (mounted) setMyTheme(theme);
+  }, [mounted, theme]);
 
   return (
     <nav className="p-4 flex items-center justify-between">

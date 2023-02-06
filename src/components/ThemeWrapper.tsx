@@ -6,11 +6,15 @@ import { Reducers } from 'src/redux/types';
 
 const ThemeWrapper = ({ children }: { children: ReactNode }) => {
   const theme = useSelector((state: Reducers) => state.theme);
-  const [myTheme, setMyTheme] = useState<string>('');
+  const [mounted, setMounted] = useState(false);
+  const [myTheme, setMyTheme] = useState(() => {
+    if (mounted) return theme;
+  });
 
   useEffect(() => {
-    setMyTheme(theme);
-  }, [theme]);
+    setMounted(() => true);
+    if (mounted) setMyTheme(theme);
+  }, [mounted, theme]);
 
   return (
     <div className={myTheme}>
