@@ -10,11 +10,11 @@ const Home: NextPage = () => {
   return (
     <Container>
       <div className="flex flex-col gap-4">
-        <Hero />
-        <section className={cn('grid gap-4', 'sm:grid-cols-[2fr_3fr]')}>
+        <section className={cn('grid gap-4', 'sm:grid-cols-[2fr_1fr]')}>
+          <Hero />
           <Projects />
-          <CurrentlyPlaying />
         </section>
+        <CurrentlyPlaying />
       </div>
     </Container>
   );

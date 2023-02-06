@@ -9,7 +9,7 @@ const Projects = () => {
       <a
         title="go to the projects I've worked"
         className={cn(
-          'group relative h-[8rem] p-4 flex justify-start gap-4 items-center text-xl font-bold transition-all rounded-2xl bg-gray-0 border-2 border-white',
+          'group relative min-h-[8rem] p-4 flex justify-start gap-4 items-center text-xl font-bold transition-all rounded-2xl bg-gray-0 border-2 border-white',
           'dark:bg-gray-850 dark:border-gray-900',
           'hover:text-lg hover:border-gray-200 dark:hover:border-gray-700'
         )}

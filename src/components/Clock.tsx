@@ -1,5 +1,11 @@
 import { useState, useEffect, useMemo } from 'react';
 
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 import {
   WiTime1,
   WiTime10,
@@ -18,16 +24,16 @@ import {
 const Clock = () => {
   const [hydrated, setHydrated] = useState(false);
   const [date, setDate] = useState(() => {
-    if (hydrated) return new Date();
+    if (hydrated) return dayjs().tz('Asia/Jakarta');
   });
 
-  const refreshClock = () => setDate(new Date());
+  const refreshClock = () => setDate(dayjs().tz('Asia/Jakarta'));
 
   const { hours, minutes, seconds } = useMemo(() => {
     return {
-      hours: `0${date?.getHours()}`.slice(-2),
-      minutes: `0${date?.getMinutes()}`.slice(-2),
-      seconds: `0${date?.getSeconds()}`.slice(-2),
+      hours: `0${date?.hour()}`.slice(-2),
+      minutes: `0${date?.minute()}`.slice(-2),
+      seconds: `0${date?.second()}`.slice(-2),
     };
   }, [date]);
 

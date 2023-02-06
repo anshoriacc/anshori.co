@@ -21,11 +21,11 @@ const Container = (props: any) => {
           {props.title ? `${props.title} | Achmad Anshori` : meta.title}
         </title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href={`https://anshori.io${router.asPath}`} />
+        <link rel="canonical" href={`https://anshori.co${router.asPath}`} />
         <meta name="description" content={meta.description} />
         <meta
           property="og:url"
-          content={`https://anshori.io${router.asPath}`}
+          content={`https://anshori.co${router.asPath}`}
         />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Achmad Anshori" />

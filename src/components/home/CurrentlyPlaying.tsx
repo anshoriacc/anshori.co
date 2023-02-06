@@ -15,11 +15,17 @@ const CurrentlyPlaying = () => {
         'dark:bg-gray-850 dark:border-gray-900'
       )}
     >
-      <span className="text-[#1ccc5b] text-3xl">
+      <a
+        href="https://open.spotify.com/user/312wkcarckpr64ibtf3jvgnvpnyi"
+        title='go to my spotify profile'
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#1ccc5b] text-3xl"
+      >
         <FaSpotify />
-      </span>
+      </a>
       {isLoading ? (
-        <div className="animate-pulse grow bg-gray-500 rounded h-6"></div>
+        <div className="animate-pulse grow bg-gray-500 rounded h-6" />
       ) : (
         <p className="text-ellipsis">
           {data?.isPlaying ? (
