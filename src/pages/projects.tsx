@@ -26,7 +26,7 @@ const projects = [
 const Projects: NextPage = () => {
   return (
     <Container title="Projects">
-      <h1 className="text-2xl font-bold mb-4">Projects</h1>
+      <h1 className="text-2xl font-bold mb-8">Projects</h1>
       <section className={cn('grid gap-4', 'sm:grid-cols-2')}>
         {projects.map((project, index) => (
           <Card data={project} key={index} />
