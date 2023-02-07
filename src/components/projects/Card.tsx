@@ -29,7 +29,7 @@ const Card = ({ data }: { data: dataProps }) => {
           <a
             href={data.url ? data.url : undefined}
             title={`go to ${data.title}`}
-            target="_blank"
+            target={data.url !== '/' ? '_blank' : undefined}
             rel="noopener noreferrer"
           >
             <h2
