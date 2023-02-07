@@ -2,6 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
 
-module.exports = nextConfig
+  async redirects() {
+    return [
+      {
+        source: '/spotify',
+        destination:
+          'https://open.spotify.com/user/312wkcarckpr64ibtf3jvgnvpnyi',
+        permanent: true,
+      },
+    ];
+  },
+};
+
+module.exports = nextConfig;

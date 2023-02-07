@@ -3,6 +3,27 @@ import type { NextPage } from 'next';
 
 import Container from '@components/Container';
 
+const experiences = [
+  {
+    role: 'Software Engineer',
+    status: 'Freelance',
+    company: 'Vorta Siber Indonesia',
+    startDate: 'June 2022',
+    endDate: 'Present',
+    description:
+      'As a fullstack, I worked in a team and create several features based on user requirements using PHP/Laravel and reactjs.',
+  },
+  {
+    role: 'Software Engineer',
+    status: 'Full-time',
+    company: 'Hexa Daya Solusi',
+    startDate: 'July 2022',
+    endDate: 'August 2022',
+    description:
+      'As a fullstack, I transformed user needs into a website. Using reactjs and angularjs in frontend side, and sailsjs in backend side.',
+  },
+];
+
 const About: NextPage = () => {
   return (
     <Container title="About">
@@ -41,38 +62,27 @@ const About: NextPage = () => {
       </section>
       <h2 className="text-2xl font-bold mb-8">Experience</h2>
       <section className="flex flex-col gap-4 mb-8">
-        <div>
-          <h3 className="text-xl">Software Engineer</h3>
-          <h4 className="font-bold text-lg">
-            Vorta Siber Indonesia —{' '}
-            <span className="font-normal italic text-gray-500">
-              June 2022 – Present
-            </span>
-          </h4>
-          <p>
-            As a fullstack, I worked in a team and create several features based
-            on user requirements using PHP/Laravel and reactjs.
-          </p>
-        </div>
-        <div>
-          <h3 className="text-xl">Software Engineer</h3>
-          <h4 className="font-bold text-lg">
-            Hexa Daya Solusi —{' '}
-            <span className="font-normal italic text-gray-500">
-              July 2022 – August 2022
-            </span>
-          </h4>
-          <p>
-            As a fullstack, I transformed user needs into a website. Using
-            angularjs and reactjs in frontend side, and sailsjs in backend side.
-          </p>
-        </div>
+        {experiences.map((experience, index) => (
+          <div key={index}>
+            <h3 className="text-xl">
+              {experience.role},{' '}
+              <span className="text-gray-500">{experience.status}</span>
+            </h3>
+            <h4 className="font-semibold text-lg">
+              {experience.company} —{' '}
+              <span className="font-normal italic text-gray-500">
+                {experience.startDate} – {experience.endDate}
+              </span>
+            </h4>
+            <p>{experience.description}</p>
+          </div>
+        ))}
       </section>
-      <h2 className="text-2xl font-bold mb-8">Education</h2>
+      <h2 className="text-2xl font-semibold mb-8">Education</h2>
       <section className="flex flex-col gap-4 mb-8">
         <div>
           <h3 className="text-xl">Computer Science, Bachelor Degree</h3>
-          <h4 className="font-bold text-lg">
+          <h4 className="font-semibold text-lg">
             Universitas Brawijaya —{' '}
             <span className="font-normal italic text-gray-500">
               Undergraduate

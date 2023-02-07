@@ -10,7 +10,7 @@ const projects = [
     image: '/android-chrome-512x512.png',
     description: 'My personal and portfolio website.',
     year: '2022',
-    url: 'http://anshori.vercel.app/',
+    url: '/',
     repositoryUrl: 'https://github.com/anshoriacc/anshori.co',
   },
   {
