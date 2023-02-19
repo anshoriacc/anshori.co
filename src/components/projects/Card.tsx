@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import cn from 'classnames';
+import clsx from 'clsx';
 
 import { RiExternalLinkLine } from 'react-icons/ri';
 
@@ -15,7 +15,7 @@ interface dataProps {
 const Card = ({ data }: { data: dataProps }) => {
   return (
     <div
-      className={cn(
+      className={clsx(
         'relative p-4 pb-12 h-[164px] transition-all rounded-2xl bg-gray-0',
         'dark:bg-gray-850'
       )}
@@ -33,7 +33,7 @@ const Card = ({ data }: { data: dataProps }) => {
             rel="noopener noreferrer"
           >
             <h2
-              className={cn(
+              className={clsx(
                 'text-lg font-bold transition-all line-clamp-1',
                 'hover:underline'
               )}
@@ -52,7 +52,7 @@ const Card = ({ data }: { data: dataProps }) => {
           title={`go to ${data.title} repository`}
           target="_blank"
           rel="noopener noreferrer"
-          className={cn(
+          className={clsx(
             'absolute right-4 bottom-4 px-2 py-1 text-sm flex gap-1 items-center rounded-lg transition-all bg-white border-2 border-white',
             'dark:bg-gray-900 dark:border-gray-900',
             'hover:border-gray-200 dark:hover:border-gray-700'

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import cn from 'classnames';
+import clsx from 'clsx';
 
 import { FaLink } from 'react-icons/fa';
 
@@ -8,7 +8,7 @@ const Projects = () => {
     <Link href="/projects">
       <a
         title="go to the projects I've worked"
-        className={cn(
+        className={clsx(
           'group relative min-h-[8rem] p-4 flex justify-start gap-4 items-center text-xl font-bold transition-all rounded-2xl bg-gray-0 border-2 border-white',
           'dark:bg-gray-850 dark:border-gray-900',
           'hover:text-lg hover:border-gray-200 dark:hover:border-gray-700'
@@ -16,7 +16,7 @@ const Projects = () => {
       >
         Link to projects
         <span
-          className={cn(
+          className={clsx(
             'invisible absolute bottom-2 right-2 p-1 rounded-lg flex gap-1 items-center text-xs transition-all bg-white',
             'dark:bg-gray-900',
             'group-hover:visible'

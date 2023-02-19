@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import cn from 'classnames';
+import clsx from 'clsx';
 
 import {
   FaFileDownload,
@@ -18,17 +18,17 @@ const Buttons: NextPage = () => {
         href="/resume.pdf"
         download="resume-achmad-anshori"
         title="Download Resume"
-        className={cn(
+        className={clsx(
           'p-2 w-10 h-10 text-lg rounded-lg flex gap-1 justify-center items-center transition-all border-2 bg-white border-white',
           'sm:w-[110px]',
           'dark:bg-gray-900 dark:border-gray-900',
           'hover:border-gray-200 dark:hover:border-gray-700 hover:text-base'
         )}
       >
-        <span className={cn('text-xl', 'hover:text-lg')}>
+        <span className={clsx('text-xl', 'hover:text-lg')}>
           <FaFileDownload />
         </span>
-        <span className={cn('hidden', 'sm:inline')}>Resume</span>
+        <span className={clsx('hidden', 'sm:inline')}>Resume</span>
       </a>
       <Button
         name="GitHub"

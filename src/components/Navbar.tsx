@@ -1,13 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useSelector } from 'react-redux';
+import { useTheme } from 'next-themes';
 
-import { FaExternalLinkAlt, FaMoon, FaSun } from 'react-icons/fa';
-
-import { toggleTheme } from 'src/redux/actions';
-import { useAppDispatch } from 'src/redux/store';
-import { Reducers } from 'src/redux/types';
+import { FaSun } from 'react-icons/fa';
+import { BsMoonStarsFill } from 'react-icons/bs';
 
 function NavItem({ href, text }: { href: string; text: string }) {
   const router = useRouter();
@@ -27,22 +24,23 @@ function NavItem({ href, text }: { href: string; text: string }) {
 }
 
 const Navbar = () => {
-  const dispatch = useAppDispatch();
-  const theme = useSelector((state: Reducers) => state.theme);
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [myTheme, setMyTheme] = useState(() => {
-    if (mounted) return theme;
-  });
 
-  const toggleThemeHandler = useCallback(
-    () => dispatch(toggleTheme()),
-    [dispatch]
-  );
+  const toggleThemeHandler = () => {
+    if (theme === 'light') {
+      return setTheme('dark');
+    }
+    return setTheme('light');
+  };
 
   useEffect(() => {
-    setMounted(() => true);
-    if (mounted) setMyTheme(theme);
-  }, [mounted, theme]);
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <nav className="p-4 flex items-center justify-between">
@@ -56,7 +54,7 @@ const Navbar = () => {
         title="toggle theme"
         className="p-1 rounded-full font-black text-2xl cursor-pointer text-yellow-400"
       >
-        {myTheme === 'dark' ? <FaSun /> : <FaMoon />}
+        {theme === 'dark' ? <FaSun /> : <BsMoonStarsFill />}
       </button>
     </nav>
   );

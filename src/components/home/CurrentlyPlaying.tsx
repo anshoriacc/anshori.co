@@ -1,5 +1,5 @@
-import cn from 'classnames';
 import useSWR from 'swr';
+import clsx from 'clsx';
 
 import { FaSpotify } from 'react-icons/fa';
 
@@ -10,7 +10,7 @@ const CurrentlyPlaying = () => {
 
   return (
     <div
-      className={cn(
+      className={clsx(
         'group relative h-[164px] p-4 flex justify-start gap-2 items-center text-xl transition-all rounded-2xl cursor-default bg-gray-0 border-2 border-white',
         'dark:bg-gray-850 dark:border-gray-900'
       )}
@@ -49,7 +49,7 @@ const CurrentlyPlaying = () => {
         </p>
       )}
       <span
-        className={cn(
+        className={clsx(
           'invisible absolute bottom-2 right-2 p-1 rounded-lg flex gap-1 items-center text-xs transition-all bg-white',
           'dark:bg-gray-900',
           'group-hover:visible'

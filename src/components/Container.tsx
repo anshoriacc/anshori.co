@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -15,7 +16,7 @@ const Container = (props: any) => {
   };
 
   return (
-    <main className="min-h-[100vh] max-w-[768px] mx-auto">
+    <main className={clsx('min-h-[100vh] max-w-[768px] mx-auto')}>
       <Head>
         <title>
           {props.title ? `${props.title} | Achmad Anshori` : meta.title}

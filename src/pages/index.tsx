@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import cn from 'classnames';
+import clsx from 'clsx';
 
 import Container from '@components/Container';
 import Hero from '@components/home/Hero';
@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   return (
     <Container>
       <div className="flex flex-col gap-4">
-        <section className={cn('grid gap-4', 'sm:grid-cols-[2fr_1fr]')}>
+        <section className={clsx('grid gap-4', 'sm:grid-cols-[2fr_1fr]')}>
           <Hero />
           <Projects />
         </section>
