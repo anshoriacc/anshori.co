@@ -9,7 +9,7 @@ const Hero: NextPage = () => {
   return (
     <section
       className={clsx(
-        'p-4 items-center transition-all bg-gray-0 rounded-2xl',
+        'h-[164px] p-4 items-center transition-all bg-gray-0 rounded-2xl',
         'dark:bg-gray-850'
       )}
     >
