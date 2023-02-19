@@ -38,10 +38,6 @@ const Navbar = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <nav className="p-4 flex items-center justify-between">
       <div className="flex gap-4 items-center">
@@ -54,7 +50,7 @@ const Navbar = () => {
         title="toggle theme"
         className="p-1 rounded-full font-black text-2xl cursor-pointer text-yellow-400"
       >
-        {theme === 'dark' ? <FaSun /> : <BsMoonStarsFill />}
+        {!mounted ? null : theme === 'dark' ? <FaSun /> : <BsMoonStarsFill />}
       </button>
     </nav>
   );
