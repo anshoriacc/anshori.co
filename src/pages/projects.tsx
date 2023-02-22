@@ -1,12 +1,12 @@
-import type { NextPage, NextPageContext } from 'next';
+import type { NextPage } from 'next';
 import clsx from 'clsx';
 
-import { ProjectsProps } from 'src/types';
+import { Project } from 'src/types';
 
 import Container from '@components/Container';
 import Card from '@components/projects/Card';
 
-const projects = [
+const projects: Project[] = [
   {
     title: 'anshori.co',
     image: '/android-chrome-512x512.png',
@@ -25,7 +25,7 @@ const projects = [
   },
 ];
 
-const Projects: NextPage<ProjectsProps> = ({ projects }) => {
+const Projects: NextPage = () => {
   return (
     <Container title="Projects">
       <h1 className="text-2xl font-bold mb-8">Projects</h1>
@@ -36,10 +36,6 @@ const Projects: NextPage<ProjectsProps> = ({ projects }) => {
       </section>
     </Container>
   );
-};
-
-Projects.getInitialProps = async (context: NextPageContext) => {
-  return { projects };
 };
 
 export default Projects;

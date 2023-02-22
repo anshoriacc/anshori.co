@@ -1,7 +1,3 @@
-export interface HomeProps {
-  currentlyPlayingData: CurrentlyPlayingProps;
-}
-
 export interface AboutProps {
   experiences: Experience[];
 }
@@ -10,7 +6,7 @@ export interface ProjectsProps {
   projects: Project[];
 }
 
-export interface CurrentlyPlayingProps {
+export interface CurrentlyPlayingType {
   isPlaying: boolean;
   title?: string;
   artist?: string;
