@@ -11,7 +11,7 @@ const Container = (props: any) => {
 
   const meta = {
     title: 'Achmad Anshori',
-    description: 'a Software Engineer, Frontend.',
+    description: 'a Software Engineer – Frontend.',
     ...customMeta,
   };
 
