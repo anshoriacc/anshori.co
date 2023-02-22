@@ -1,13 +1,10 @@
-import useSWR from 'swr';
 import clsx from 'clsx';
 
 import { FaSpotify } from 'react-icons/fa';
 
-import fetcher from 'src/lib/fetcher';
+import { CurrentlyPlayingProps } from 'src/types';
 
-const CurrentlyPlaying = () => {
-  const { data, isLoading } = useSWR('/api/currently-playing', fetcher);
-
+const CurrentlyPlaying = ({ data }: { data: CurrentlyPlayingProps }) => {
   return (
     <div
       className={clsx(
@@ -24,30 +21,26 @@ const CurrentlyPlaying = () => {
       >
         <FaSpotify />
       </a>
-      {isLoading ? (
-        <div className="animate-pulse grow bg-gray-500 rounded h-6" />
-      ) : (
-        <p className="text-ellipsis">
-          {data?.isPlaying ? (
-            <a
-              href={data.songUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={`open ${data.title} by ${data.artist} in spotify web player`}
-            >
-              <span className="font-bold">{data.title}</span>
-              {` – `}
-              <span className="text-gray-500">{data.artist}</span>
-            </a>
-          ) : (
-            <>
-              <span className="font-bold">Not Playing</span>
-              {` – `}
-              <span className="text-gray-500">Spotify</span>
-            </>
-          )}
-        </p>
-      )}
+      <p className="text-ellipsis">
+        {data?.isPlaying ? (
+          <a
+            href={data.songUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`open ${data.title} by ${data.artist} in spotify web player`}
+          >
+            <span className="font-bold">{data.title}</span>
+            {` – `}
+            <span className="text-gray-500">{data.artist}</span>
+          </a>
+        ) : (
+          <>
+            <span className="font-bold">Not Playing</span>
+            {` – `}
+            <span className="text-gray-500">Spotify</span>
+          </>
+        )}
+      </p>
       <span
         className={clsx(
           'invisible absolute bottom-2 right-2 p-1 rounded-lg flex gap-1 items-center text-xs transition-all bg-white',

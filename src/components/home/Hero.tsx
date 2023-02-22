@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import clsx from 'clsx';
 
-import { BiCurrentLocation } from 'react-icons/bi';
+import { RiRoadMapFill } from 'react-icons/ri';
 
 import Buttons from './Buttons';
 
@@ -22,7 +22,7 @@ const Hero: NextPage = () => {
       </p>
       <p className="text-gray-500 flex gap-1 items-center">
         <span className="text-sky-800">
-          <BiCurrentLocation />
+          <RiRoadMapFill />
         </span>
         Malang, Indonesia
       </p>

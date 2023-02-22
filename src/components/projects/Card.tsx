@@ -3,16 +3,9 @@ import clsx from 'clsx';
 
 import { RiExternalLinkLine } from 'react-icons/ri';
 
-interface dataProps {
-  title: string;
-  image: string;
-  description: string;
-  year: string;
-  url: string;
-  repositoryUrl: string;
-}
+import { Project } from 'src/types';
 
-const Card = ({ data }: { data: dataProps }) => {
+const Card = ({ data }: { data: Project }) => {
   return (
     <div
       className={clsx(

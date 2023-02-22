@@ -1,5 +1,7 @@
-import type { NextPage } from 'next';
+import type { NextPage, NextPageContext } from 'next';
 import clsx from 'clsx';
+
+import { ProjectsProps } from 'src/types';
 
 import Container from '@components/Container';
 import Card from '@components/projects/Card';
@@ -23,7 +25,7 @@ const projects = [
   },
 ];
 
-const Projects: NextPage = () => {
+const Projects: NextPage<ProjectsProps> = ({ projects }) => {
   return (
     <Container title="Projects">
       <h1 className="text-2xl font-bold mb-8">Projects</h1>
@@ -34,6 +36,10 @@ const Projects: NextPage = () => {
       </section>
     </Container>
   );
+};
+
+Projects.getInitialProps = async (context: NextPageContext) => {
+  return { projects };
 };
 
 export default Projects;

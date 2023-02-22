@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import type { NextPage } from 'next';
+import type { NextPage, NextPageContext } from 'next';
+
+import { AboutProps } from 'src/types';
 
 import Container from '@components/Container';
 
@@ -24,7 +26,7 @@ const experiences = [
   },
 ];
 
-const About: NextPage = () => {
+const About: NextPage<AboutProps> = ({ experiences }) => {
   return (
     <Container title="About">
       <h2 className="text-2xl font-bold mb-8">About Me</h2>
@@ -92,6 +94,12 @@ const About: NextPage = () => {
       </section>
     </Container>
   );
+};
+
+// export async function getServerSideProps(context: any) {}
+
+About.getInitialProps = async (context: NextPageContext) => {
+  return { experiences };
 };
 
 export default About;

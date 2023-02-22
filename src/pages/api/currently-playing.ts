@@ -3,16 +3,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { getCurrentlyPlaying } from 'src/lib/spotify';
 
-type Data = {
-  isPlaying: boolean;
-  title?: string;
-  artist?: string;
-  songUrl?: string;
-};
+import { CurrentlyPlayingProps } from 'src/types';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<CurrentlyPlayingProps>
 ) {
   const response = await getCurrentlyPlaying();
 
