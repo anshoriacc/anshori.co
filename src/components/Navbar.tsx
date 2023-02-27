@@ -50,7 +50,8 @@ const Navbar = () => {
         title="toggle theme"
         className="p-1 rounded-full font-black text-2xl cursor-pointer text-yellow-400"
       >
-        {!mounted ? null : theme === 'dark' ? <FaSun /> : <BsMoonStarsFill />}
+        {/* {!mounted ? null : theme === 'dark' ? <FaSun /> : <BsMoonStarsFill />} */}
+        {!mounted ? null : theme === 'light' ? <BsMoonStarsFill /> : <FaSun />}
       </button>
     </nav>
   );
