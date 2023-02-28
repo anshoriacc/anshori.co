@@ -15,7 +15,7 @@ const Card = ({ data }: { data: Project }) => {
     >
       <time className="text-sm text-gray-500">{data.year}</time>
       <div className="grid grid-cols-[36px_1fr] gap-4">
-        <div className="relative aspect-square self-center">
+        <div className="relative aspect-square self-center rounded-lg overflow-hidden">
           <Image src={data.image} alt={data.title} layout="fill" />
         </div>
         <div>
