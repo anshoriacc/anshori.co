@@ -19,7 +19,7 @@ const Container = (props: any) => {
     <main className={clsx('min-h-[100vh] max-w-[768px] mx-auto')}>
       <Head>
         <title>
-          {props.title ? `${props.title} | Achmad Anshori` : meta.title}
+          {props.title ? `${props.title} – Achmad Anshori` : meta.title}
         </title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href={`https://anshori.co${router.asPath}`} />

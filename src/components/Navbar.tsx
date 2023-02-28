@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
+import clsx from 'clsx';
 
 import { FaSun } from 'react-icons/fa';
 import { BsMoonStarsFill } from 'react-icons/bs';
@@ -13,9 +14,10 @@ function NavItem({ href, text }: { href: string; text: string }) {
   return (
     <Link href={href}>
       <a
-        className={`${
-          isActive ? 'font-bold' : 'text-gray-500 hover:text-inherit'
-        } transition-all`}
+        className={clsx(
+          isActive ? 'font-bold' : 'text-gray-500 hover:text-inherit',
+          'transition-all'
+        )}
       >
         <span>{text}</span>
       </a>
@@ -50,7 +52,6 @@ const Navbar = () => {
         title="toggle theme"
         className="p-1 rounded-full font-black text-2xl cursor-pointer text-yellow-400"
       >
-        {/* {!mounted ? null : theme === 'dark' ? <FaSun /> : <BsMoonStarsFill />} */}
         {!mounted ? null : theme === 'light' ? <BsMoonStarsFill /> : <FaSun />}
       </button>
     </nav>
