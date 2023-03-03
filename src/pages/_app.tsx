@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import { Router } from 'next/router';
 import LoadingBar from 'react-top-loading-bar';
+import { Analytics } from '@vercel/analytics/react';
 
 import '../styles/globals.css';
 
@@ -33,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider attribute="class">
       <LoadingBar color="#3b82f6" ref={ref} shadow={false} />
       <Component {...pageProps} />
+      <Analytics />
     </ThemeProvider>
   );
 }
