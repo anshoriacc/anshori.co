@@ -80,7 +80,7 @@ const About: NextPage = () => {
           </div>
         ))}
       </section>
-      <h2 className="text-2xl font-semibold mb-8">Education</h2>
+      <h2 className="text-2xl font-bold mb-8">Education</h2>
       <section className="flex flex-col gap-4 mb-8">
         <div>
           <h3 className="text-xl">Computer Science, Bachelor Degree</h3>
