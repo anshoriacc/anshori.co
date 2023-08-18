@@ -12,7 +12,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/source-code-skripsi",
+        source: "/assets-skripsi",
         destination:
           "https://drive.google.com/drive/folders/1DOW-uM6Mzou00sh3qGxjyuW8eAJPIJPc?usp=sharing",
         permanent: true,
