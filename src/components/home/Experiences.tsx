@@ -35,7 +35,7 @@ const Experiences = () => {
     <section className="mt-4 flex flex-col gap-2">
       {/* section title */}
       <Link href="#experiences" className="w-fit">
-        <h2 className="h2-page text-2xl font-black" id="projects">
+        <h2 className="h2-page text-2xl font-black" id="experiences">
           experiences.
         </h2>
       </Link>

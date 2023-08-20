@@ -5,7 +5,7 @@ const Education = () => {
     <section className="mt-4 flex flex-col gap-2">
       {/* section title */}
       <Link href="#education" className="w-fit">
-        <h2 className="h2-page text-2xl font-black" id="projects">
+        <h2 className="h2-page text-2xl font-black" id="education">
           education.
         </h2>
       </Link>
