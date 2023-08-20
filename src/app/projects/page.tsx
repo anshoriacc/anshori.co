@@ -13,7 +13,8 @@ export const projects: IProject[] = [
   {
     title: "G19 Tour & Travel",
     image: "/images/g19.svg",
-    description: "Reservation web application for G19 Tour & Travel.",
+    description:
+      "Reservation web application for G19 Tour & Travel using nextjs & expressjs.",
     year: "2023",
     url: "https://g19.vercel.app/",
     repositoryUrl: "https://github.com/anshoriacc/g19-nextjs",
@@ -21,7 +22,7 @@ export const projects: IProject[] = [
   {
     title: "anshori.co",
     image: "/android-chrome-512x512.png",
-    description: "My personal and portfolio website.",
+    description: "My personal and portfolio website using nextjs.",
     year: "2023",
     url: "/",
     repositoryUrl: "https://github.com/anshoriacc/anshori.co",
@@ -29,7 +30,8 @@ export const projects: IProject[] = [
   {
     title: "Madura Tourism Centre",
     image: "/images/maduratourismcentre.png",
-    description: "Information page of Madura tourism, history and culture.",
+    description:
+      "Information page of Madura tourism, history and culture using reactjs.",
     year: "2022",
     url: "https://maduratourismcentre.id/",
     repositoryUrl: "",
