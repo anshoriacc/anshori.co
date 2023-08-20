@@ -51,7 +51,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <Analytics mode={"production"} />;
+        <Analytics mode={"production"} />
       </body>
     </html>
   );
