@@ -1,31 +1,28 @@
-import Link from 'next/link';
-import clsx from 'clsx';
+import Link from "next/link";
 
-import { FaLink } from 'react-icons/fa';
+import { projects } from "@/app/projects/page";
+import Project from "../Project";
 
 const Projects = () => {
   return (
-    <Link href="/projects">
-      <a
-        title="go to the projects I've worked"
-        className={clsx(
-          'group relative h-[164px] p-4 flex justify-start gap-4 items-center text-xl font-bold transition-all rounded-2xl bg-gray-0 border-2 border-white',
-          'dark:bg-gray-850 dark:border-gray-900',
-          'hover:text-lg hover:border-gray-200 dark:hover:border-gray-700'
-        )}
-      >
-        Link to projects
-        <span
-          className={clsx(
-            'invisible absolute bottom-2 right-2 p-1 rounded-lg flex gap-1 items-center text-xs transition-all bg-white',
-            'dark:bg-gray-900',
-            'group-hover:visible'
-          )}
-        >
-          <FaLink />
-        </span>
-      </a>
-    </Link>
+    <section className="mt-4 flex flex-col gap-2">
+      {/* section title */}
+      <div className="flex gap-4 items-center">
+        <Link href="#projects" className="w-fit">
+          <h2 className="h2-page text-2xl font-black" id="projects">
+            projects.
+          </h2>
+        </Link>
+        <Link href="projects" className="text-gray-500 hover:text-white underline">
+          more
+        </Link>
+      </div>
+
+      {/* projects */}
+      {projects.slice(0, 3).map((project, index) => (
+        <Project key={index} data={project} />
+      ))}
+    </section>
   );
 };
 

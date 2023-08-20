@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  overflow-y: scroll; /* Show vertical scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #212121;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: #212121;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4b4b4b;
+  transition: all;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #646464;
+}
+
+.h2-page:hover::before {
+  content: "#";
+  position: absolute;
+  translate: -20px;
+  @apply text-gray-500;
+}
+
+.list:hover::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 3px;
+  top: 50%;
+  translate: -20px -50%;
+  border-radius: 24px;
+  @apply text-gray-500 bg-gray-500;
+}
