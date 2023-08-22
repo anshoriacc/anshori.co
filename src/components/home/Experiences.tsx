@@ -30,7 +30,7 @@ const experiences: Experience[] = [
   },
 ];
 
-const Experiences = () => {
+const Experiences: React.FC = () => {
   return (
     <section className="mt-4 flex flex-col gap-2">
       {/* section title */}

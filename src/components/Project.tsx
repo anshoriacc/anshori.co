@@ -5,15 +5,21 @@ import { RiExternalLinkLine } from "react-icons/ri";
 
 import { IProject } from "@/app/projects/page";
 
-type Props = {
+type IProps = {
   data: IProject;
 };
 
-const Project = ({ data }: Props) => {
+const Project: React.FC<IProps> = ({ data }) => {
   return (
     <div className="">
       <div className="list relative py-2 grid grid-cols-[36px_1fr] gap-4 items-center">
-        <Image src={data.image} alt={data.title} width={36} height={36} />
+        <Image
+          src={data.image}
+          alt={data.title}
+          width={36}
+          height={36}
+          priority
+        />
         <div>
           <div className="flex gap-2">
             <Link

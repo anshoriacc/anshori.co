@@ -2,7 +2,7 @@
 
 import Clock from "../Clock";
 
-const ClockWrapper = () => {
+const ClockWrapper: React.FC = () => {
   return (
     <section className="flex gap-1 items-center">
       <Clock />

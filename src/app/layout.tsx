@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import clsx from "clsx";
 
 import "./globals.css";
 
@@ -9,7 +10,10 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
+type IProps = { children: React.ReactNode };
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://anshori.co"),
   title: {
     default: "Achmad Anshori",
     template: "%s – Achmad Anshori",
@@ -36,17 +40,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout: React.FC<IProps> = ({ children }) => {
   return (
     <html lang="en">
       <body
-        className={`${inter.className} min-h-screen bg-gray-900
-         text-white max-w-[640px] 
-         mx-auto pt-[5vh] flex flex-col`}
+        className={clsx(
+          inter.className,
+          "min-h-screen bg-gray-900 text-white max-w-[640px] mx-auto pt-[5vh] flex flex-col"
+        )}
       >
         <Header />
         {children}
@@ -55,4 +56,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

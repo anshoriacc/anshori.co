@@ -21,7 +21,7 @@ import {
   WiTime9,
 } from 'react-icons/wi';
 
-const Clock = () => {
+const Clock: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [date, setDate] = useState(() => {
     if (mounted) return dayjs().tz('Asia/Jakarta');

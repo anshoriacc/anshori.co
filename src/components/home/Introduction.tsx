@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { SiReact, SiNextdotjs } from "react-icons/si";
 
-const Introduction = () => {
+const Introduction: React.FC = () => {
   return (
     <section>
       <article className="text-justify">

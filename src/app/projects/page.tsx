@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import Project from "@/components/Project";
 
 export interface IProject {
@@ -38,7 +40,31 @@ export const projects: IProject[] = [
   },
 ];
 
-export default function Projects() {
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "The projects I've worked.",
+  openGraph: {
+    type: "website",
+    url: "https://anshori.co/projects",
+    title: "Projects – Achmad Anshori",
+    description: "The projects I've worked.",
+    siteName: "Achmad Anshori",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  twitter: {
+    title: "Projects – Achmad Anshori",
+    card: "summary_large_image",
+  },
+};
+
+const ProjectsPage: React.FC = () => {
   return (
     <main className="p-6 flex-1 flex flex-col gap-4">
       {/* title */}
@@ -55,4 +81,6 @@ export default function Projects() {
       ))}
     </main>
   );
-}
+};
+
+export default ProjectsPage;

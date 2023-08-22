@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const navLinks = [{ href: "/projects", label: "projects" }];
 
-const Header = () => {
+const Header: React.FC = () => {
   const pathname = usePathname();
 
   return (

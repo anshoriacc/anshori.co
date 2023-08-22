@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import {
   FaFileDownload,
   FaGithub,
@@ -29,7 +30,7 @@ const links = [
   },
 ];
 
-const Social = () => {
+const Social: React.FC = () => {
   return (
     <section className="flex gap-2 flex-wrap">
       {links.map((link) => (

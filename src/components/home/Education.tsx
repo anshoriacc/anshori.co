@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Education = () => {
+const Education: React.FC = () => {
   return (
     <section className="mt-4 flex flex-col gap-2">
       {/* section title */}

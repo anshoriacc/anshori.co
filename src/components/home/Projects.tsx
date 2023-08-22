@@ -3,7 +3,7 @@ import Link from "next/link";
 import { projects } from "@/app/projects/page";
 import Project from "../Project";
 
-const Projects = () => {
+const Projects: React.FC = () => {
   return (
     <section className="mt-4 flex flex-col gap-2">
       {/* section title */}
