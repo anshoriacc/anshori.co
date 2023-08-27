@@ -9,7 +9,7 @@ const Spotify: React.FC = () => {
   const { isLoading, data } = useGetCurrentlyPlaying();
 
   return (
-    <section className="mt-4 grid grid-cols-[min-content_1fr] gap-2 items-center">
+    <section className="mt-8 grid grid-cols-[min-content_1fr] gap-2 items-center">
       <Link
         href="/spotify"
         title="go to my spotify profile"
