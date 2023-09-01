@@ -19,6 +19,7 @@ const Project: React.FC<IProps> = ({ data }) => {
           width={36}
           height={36}
           priority
+          draggable={false}
         />
         <div>
           <div className="flex gap-2">
