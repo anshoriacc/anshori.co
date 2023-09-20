@@ -2,16 +2,16 @@ import { Metadata } from "next";
 
 import Project from "@/components/Project";
 
-export interface IProject {
+export type TProject = {
   title: string;
   image: string;
   description: string;
   year: string;
   url: string;
   repositoryUrl: string;
-}
+};
 
-export const projects: IProject[] = [
+export const projects: TProject[] = [
   {
     title: "G19 Tour & Travel",
     image: "/images/g19.svg",

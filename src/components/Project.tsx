@@ -3,13 +3,13 @@ import Image from "next/image";
 
 import { RiExternalLinkLine } from "react-icons/ri";
 
-import { IProject } from "@/app/projects/page";
+import { TProject } from "@/app/projects/page";
 
-type IProps = {
-  data: IProject;
+type TProps = {
+  data: TProject;
 };
 
-const Project: React.FC<IProps> = ({ data }) => {
+const Project: React.FC<TProps> = ({ data }) => {
   return (
     <div className="">
       <div className="list relative py-2 grid grid-cols-[36px_1fr] gap-4 items-center">

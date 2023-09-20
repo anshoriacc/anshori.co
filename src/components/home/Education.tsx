@@ -1,14 +1,10 @@
-import Link from "next/link";
-
 const Education: React.FC = () => {
   return (
     <section className="mt-4 flex flex-col gap-2">
       {/* section title */}
-      <Link href="#education" className="w-fit">
-        <h2 className="h2-page text-2xl font-black" id="education">
-          education.
-        </h2>
-      </Link>
+      <h2 className="h2-page text-2xl font-black" id="education">
+        education.
+      </h2>
 
       {/* education */}
       <div className="list relative">
