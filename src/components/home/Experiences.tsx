@@ -1,15 +1,13 @@
-import Link from "next/link";
-
-export interface Experience {
+export type TExperience = {
   role: string;
   status: string;
   company: string;
   startDate: string;
   endDate: string;
   description: string;
-}
+};
 
-const experiences: Experience[] = [
+const experiences: TExperience[] = [
   {
     role: "Software Engineer",
     status: "Full time",
@@ -34,11 +32,9 @@ const Experiences: React.FC = () => {
   return (
     <section className="mt-4 flex flex-col gap-2">
       {/* section title */}
-      <Link href="#experiences" className="w-fit">
-        <h2 className="h2-page text-2xl font-black" id="experiences">
-          experiences.
-        </h2>
-      </Link>
+      <h2 className="h2-page text-2xl font-black" id="experiences">
+        experiences.
+      </h2>
 
       {/* experiences */}
       {experiences.map((experience, index) => (

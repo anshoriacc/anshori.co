@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 
 import { getCurrentlyPlaying } from "@/services/spotifyApi";
 
-export type ICurrentlyPlayingType = {
+export type TCurrentlyPlayingType = {
   isPlaying: boolean;
   title?: string;
   artist?: string;
@@ -12,7 +12,7 @@ export type ICurrentlyPlayingType = {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<ICurrentlyPlayingType>
+  res: NextApiResponse<TCurrentlyPlayingType>
 ) {
   const response = await getCurrentlyPlaying();
 

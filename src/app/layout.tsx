@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-type IProps = { children: React.ReactNode };
+type TProps = { children: React.ReactNode };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://anshori.co"),
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-const RootLayout: React.FC<IProps> = ({ children }) => {
+const RootLayout: React.FC<TProps> = ({ children }) => {
   return (
     <html lang="en">
       <body
