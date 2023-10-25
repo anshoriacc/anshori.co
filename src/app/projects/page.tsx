@@ -69,9 +69,6 @@ const ProjectsPage: React.FC = () => {
     <main className="p-6 flex-1 flex flex-col gap-4">
       {/* title */}
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-black" id="projects">
-          projects.
-        </h1>
         <h2 className="text-gray-500">The projects I&apos;ve worked.</h2>
       </div>
 

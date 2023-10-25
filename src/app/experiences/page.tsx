@@ -28,15 +28,15 @@ const experiences: TExperience[] = [
   },
 ];
 
-const Experiences: React.FC = () => {
+const ExperiencesPage: React.FC = () => {
   return (
-    <section className="mt-4 flex flex-col gap-2">
-      {/* section title */}
-      <h2 className="h2-page text-2xl font-black" id="experiences">
-        experiences.
-      </h2>
+    <main className="p-6 flex-1 flex flex-col gap-4">
+      {/* title */}
+      <div className="flex flex-col gap-2">
+        <h2 className="text-gray-500">My past and current places I&apos;ve worked at.</h2>
+      </div>
 
-      {/* experiences */}
+      {/* content */}
       {experiences.map((experience, index) => (
         <div key={index} className="list relative">
           <h3>
@@ -52,8 +52,8 @@ const Experiences: React.FC = () => {
           <p className="text-gray-500 text-justify">{experience.description}</p>
         </div>
       ))}
-    </section>
+    </main>
   );
 };
 
-export default Experiences;
+export default ExperiencesPage;
