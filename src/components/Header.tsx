@@ -19,7 +19,7 @@ const Header: React.FC = () => {
       <Link href="/" className="text-3xl font-black text-white">
         {navLinks.find((link) => link.href === pathname)?.title}.
       </Link>
-      <nav className="hidden sm:flex gap-4 text-gray-500 font-bold">
+      <nav className="hidden sm:flex gap-3 text-gray-500 font-bold">
         {navLinks.map((link) => {
           const isActive = link.href === pathname;
           return (
