@@ -19,7 +19,7 @@ const Spotify: React.FC = () => {
         <FaSpotify className="text-2xl text-[#1DB954]" />
       </Link>
       {isLoading ? (
-        <div className="animate-pulse grow bg-gray-500 rounded h-4" />
+        <div className="animate-pulse w-60 bg-gray-500 rounded h-4" />
       ) : (
         <p className="line-clamp-2">
           {data?.isPlaying ? (
