@@ -11,7 +11,7 @@ export type TProject = {
   repositoryUrl: string;
 };
 
-export const projects: TProject[] = [
+const projects: TProject[] = [
   {
     title: "G19 Tour & Travel",
     image: "/images/g19.svg",

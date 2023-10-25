@@ -1,9 +1,6 @@
 import ClockWrapper from "@/components/home/ClockWrapper";
 import Introduction from "@/components/home/Introduction";
 import Social from "@/components/home/Social";
-import Projects from "@/components/home/Projects";
-import Experiences from "@/components/home/Experiences";
-import Education from "@/components/home/Education";
 import Spotify from "@/components/home/Spotify";
 
 const HomePage: React.FC = () => {
