@@ -12,9 +12,6 @@ const HomePage: React.FC = () => {
       <ClockWrapper />
       <Introduction />
       <Social />
-      <Projects />
-      <Experiences />
-      <Education />
       <Spotify />
     </main>
   );

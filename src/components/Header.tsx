@@ -3,23 +3,23 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const navLinks = [{ href: "/projects", label: "projects" }];
+const navLinks = [
+  { href: "/", label: "home", title: "anshori" },
+  { href: "/projects", label: "projects", title: "projects" },
+  { href: "/experiences", label: "experiences", title: "experiences" },
+  { href: "/education", label: "education", title: "education" },
+  { href: "/blog", label: "blog", title: "blog" },
+];
 
 const Header: React.FC = () => {
   const pathname = usePathname();
 
   return (
     <header className="p-6 flex justify-between items-center">
-      <Link
-        href="/"
-        className={`text-3xl font-black transition-all ${
-          pathname !== "/" ? "text-gray-500 hover:text-white" : ""
-        }`}
-        id="header"
-      >
-        anshori.
+      <Link href="/" className="text-3xl font-black text-white">
+        {navLinks.find((link) => link.href === pathname)?.title}.
       </Link>
-      <nav className="flex gap-4 text-gray-500 font-bold">
+      <nav className="hidden sm:flex gap-4 text-gray-500 font-bold">
         {navLinks.map((link) => {
           const isActive = link.href === pathname;
           return (
