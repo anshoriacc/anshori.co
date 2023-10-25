@@ -1,4 +1,4 @@
-export type TExperience = {
+type TExperience = {
   role: string;
   status: string;
   company: string;
@@ -33,7 +33,9 @@ const ExperiencesPage: React.FC = () => {
     <main className="p-6 flex-1 flex flex-col gap-4">
       {/* title */}
       <div className="flex flex-col gap-2">
-        <h2 className="text-gray-500">My past and current places I&apos;ve worked at.</h2>
+        <h2 className="text-gray-500">
+          My past and current places I&apos;ve worked at.
+        </h2>
       </div>
 
       {/* content */}
