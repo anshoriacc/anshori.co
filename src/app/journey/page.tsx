@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 type TExperience = {
   role: string;
   status: string;
@@ -28,6 +30,30 @@ const experiences: TExperience[] = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Journey",
+  description: "The journey I've been through so far.",
+  openGraph: {
+    type: "website",
+    url: "https://anshori.co/journey",
+    title: "Journey – Achmad Anshori",
+    description: "The journey I've been through so far.",
+    siteName: "Achmad Anshori",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  twitter: {
+    title: "Journey – Achmad Anshori",
+    card: "summary_large_image",
+  },
+};
+
 const JourneyPage: React.FC = () => {
   return (
     <main className="p-6 flex-1 flex flex-col gap-4">
@@ -37,11 +63,9 @@ const JourneyPage: React.FC = () => {
           The journey I&apos;ve been through so far.
         </h2>
       </div>
-      
+
       {/* experiences */}
-      <h2 className="h2-page text-2xl font-black m-0">
-        Experiences
-      </h2>
+      <h2 className="h2-page text-2xl font-black m-0">Experiences</h2>
       {experiences.map((experience, index) => (
         <div key={index} className="list relative">
           <h3>
@@ -59,9 +83,7 @@ const JourneyPage: React.FC = () => {
       ))}
 
       {/* education */}
-      <h2 className="h2-page text-2xl font-black m-0">
-        Education
-      </h2>
+      <h2 className="h2-page text-2xl font-black m-0">Education</h2>
       <div className="list relative">
         <div>
           <h3 className="font-bold">Computer Science, Bachelor Degree</h3>
