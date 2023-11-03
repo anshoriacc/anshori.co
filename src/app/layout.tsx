@@ -1,7 +1,9 @@
+// @ts-ignore
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
+import { GeistMono } from "geist/font";
 
 import "./globals.css";
 
@@ -45,7 +47,7 @@ const RootLayout: React.FC<TProps> = ({ children }) => {
     <html lang="en">
       <body
         className={clsx(
-          inter.className,
+          GeistMono.className,
           "min-h-screen bg-gray-900 text-white max-w-[640px] mx-auto pt-[5vh] flex flex-col"
         )}
       >
