@@ -1,5 +1,4 @@
 import axios from "axios";
-import useSWR from "swr";
 
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
 const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
@@ -35,10 +34,7 @@ export const getCurrentlyPlaying = async () => {
   });
 };
 
-const fetcher = async (url: string) => {
+export const fetcher = async (url: string) => {
   const res = await axios.get(url);
   return res.data;
 };
-
-export const useGetCurrentlyPlaying = () =>
-  useSWR("api/currently-playing", fetcher);

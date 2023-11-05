@@ -1,12 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import useSWR from "swr";
 
-import { useGetCurrentlyPlaying } from "@/services/spotifyApi";
 import { FaSpotify } from "react-icons/fa";
+import { fetcher } from "@/services/spotifyApi";
 
 const Spotify: React.FC = () => {
-  const { isLoading, data } = useGetCurrentlyPlaying();
+  const { isLoading, data } = useSWR("api/currently-playing", fetcher);
 
   return (
     <section className="mt-8 grid grid-cols-[min-content_1fr] gap-2 items-center">
