@@ -50,7 +50,7 @@ const Header: React.FC = () => {
   return (
     <header className="p-6 flex justify-between items-center">
       <Link href="/" className="text-3xl font-black text-white">
-        {navLinks.find((link) => link.href === pathname)?.title}.
+        {pathname.split("/")[1] || "anshori"}.
       </Link>
 
       <div ref={buttonRef} className="sm:hidden">

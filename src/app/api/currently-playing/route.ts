@@ -1,6 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-import { getCurrentlyPlaying } from "@/services/spotifyApi";
+import { getCurrentlyPlaying } from "@/utils/spotifyApi";
 
 export type TCurrentlyPlayingType = {
   isPlaying: boolean;

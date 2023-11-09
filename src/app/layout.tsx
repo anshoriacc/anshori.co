@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import clsx from "clsx";
-import { GeistMono } from "geist/font";
 
 import "./globals.css";
 
@@ -44,10 +43,10 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<TProps> = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={clsx(
-          GeistMono.className,
+          inter.className,
           "min-h-screen bg-gray-900 text-white max-w-[640px] mx-auto pt-[5vh] flex flex-col"
         )}
       >
