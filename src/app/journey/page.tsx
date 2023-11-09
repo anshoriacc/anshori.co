@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, NextPage } from "next";
 
 type TExperience = {
   role: string;
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
 };
 
-const JourneyPage: React.FC = () => {
+const JourneyPage: NextPage = () => {
   return (
     <main className="p-6 flex-1 flex flex-col gap-4">
       {/* title */}
