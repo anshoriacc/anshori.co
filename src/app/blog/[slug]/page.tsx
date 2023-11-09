@@ -1,20 +1,25 @@
 import { Metadata, NextPage } from "next";
-import { notFound } from "next/navigation";
 import { gql } from "@apollo/client";
 import Image from "next/image";
 import dayjs from "dayjs";
 
-import { getClientOld } from "@/utils/ApolloClient";
+import { getClient } from "@/utils/ApolloClient";
+import { notFound } from "next/navigation";
 
 type Response = {
-  post: {
-    title: string;
-    slug: string;
-    coverImage: string;
-    content: string;
-    readTime: number;
-    dateAdded: string;
-    views: number;
+  publication: {
+    post: {
+      title: string;
+      subtitle: string;
+      slug: string;
+      readTimeInMinutes: number;
+      coverImage: {
+        url: string;
+      };
+      content: { html: string };
+      publishedAt: string;
+      views: number;
+    } | null;
   };
 };
 
@@ -22,16 +27,23 @@ type Props = {
   params: { slug: string };
 };
 
-const postsQuery = gql`
-  query Post($slug: String!) {
-    post(slug: $slug, hostname: "anshori.co/blog") {
-      title
-      slug
-      coverImage
-      content
-      readTime
-      dateAdded
-      views
+const postQuery = gql`
+  query SinglePostByPublication($slug: String!) {
+    publication(host: "anshori.co/blog") {
+      post(slug: $slug) {
+        title
+        subtitle
+        slug
+        readTimeInMinutes
+        publishedAt
+        views
+        coverImage {
+          url
+        }
+        content {
+          html
+        }
+      }
     }
   }
 `;
@@ -39,21 +51,22 @@ const postsQuery = gql`
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
 
-  const { data } = await getClientOld()
-    .query<Response>({
-      query: postsQuery,
-      variables: { slug },
-    })
-    .catch(() => notFound());
+  const { data } = await getClient().query<Response>({
+    query: postQuery,
+    variables: { slug },
+  });
 
   return {
-    title: data.post.title ?? "Blog – Achmad Anshori",
-    description: "This is basically my voice in text.",
+    title: data.publication.post?.title ?? "Blog – Achmad Anshori",
+    description: data.publication.post?.subtitle ?? "My thoughts in text.",
     openGraph: {
       type: "website",
       url: `https://anshori.co/blog/${slug}`,
-      title: data.post.title,
-      description: "This is basically my voice in text.",
+      title: data.publication.post?.title ?? "Blog – Achmad Anshori",
+      description: data
+        ? data.publication.post?.subtitle
+        : "My thoughts in text.",
+      images: data.publication.post?.coverImage.url,
       siteName: "Achmad Anshori",
     },
     robots: {
@@ -65,7 +78,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     twitter: {
-      title: data.post.title,
+      title: data.publication.post?.title ?? "Blog – Achmad Anshori",
+      description: data
+        ? data.publication.post?.subtitle
+        : "My thoughts in text.",
+      images: data.publication.post?.coverImage.url,
       card: "summary_large_image",
     },
   };
@@ -74,41 +91,54 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const BlogPostPage: NextPage<Props> = async ({ params }) => {
   const { slug } = params;
 
-  const { data } = await getClientOld().query<Response>({
-    query: postsQuery,
+  const { data } = await getClient().query<Response>({
+    query: postQuery,
     variables: { slug },
   });
+
+  if (data.publication.post === null) {
+    return notFound();
+  }
 
   return (
     <main className="p-6 flex-1 flex flex-col gap-4">
       {/* title */}
       <section>
-        <h1 className="text-4xl font-black">{data.post.title}</h1>
+        <h1 className="text-4xl font-black">{data.publication.post?.title}</h1>
         <p className="text-gray-500">
-          <span title={dayjs(data.post.dateAdded).format("DD MMMM YYYY HH:mm")}>
-            {dayjs(data.post.dateAdded).format("MMM DD YYYY")}
+          <span
+            title={dayjs(data.publication.post?.publishedAt).format(
+              "DD MMMM YYYY HH:mm"
+            )}
+          >
+            {dayjs(data.publication.post?.publishedAt).format("MMM DD YYYY")}
           </span>
           <span className="mx-2">|</span>
-          {data.post.readTime} min read
+          {data.publication.post?.readTimeInMinutes} min read
           <span className="mx-2">|</span>
-          {data.post.views} views
+          {data.publication.post?.views} views
         </p>
       </section>
 
-      <Image
-        src={data.post.coverImage}
-        alt="cover image"
-        width={576}
-        height={200}
-        objectFit="cover"
-        className="mx-auto object-cover"
-      />
+      {data.publication.post?.coverImage.url && (
+        <Image
+          src={data.publication.post?.coverImage.url}
+          alt="cover image"
+          width={576}
+          height={200}
+          className="mx-auto object-cover rounded-md"
+        />
+      )}
 
       {/* article */}
-      <article
-        className="prose prose-invert"
-        dangerouslySetInnerHTML={{ __html: data.post.content }}
-      />
+      {data.publication.post && (
+        <article
+          className="prose prose-invert"
+          dangerouslySetInnerHTML={{
+            __html: data.publication.post?.content.html,
+          }}
+        />
+      )}
     </main>
   );
 };
