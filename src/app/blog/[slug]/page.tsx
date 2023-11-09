@@ -57,12 +57,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 
   return {
-    title: data.publication.post?.title ?? "Blog – Achmad Anshori",
+    title: data.publication.post?.title ?? "Blog",
     description: data.publication.post?.subtitle ?? "My thoughts in text.",
     openGraph: {
       type: "website",
       url: `https://anshori.co/blog/${slug}`,
-      title: data.publication.post?.title ?? "Blog – Achmad Anshori",
+      title: data.publication.post?.title ?? "Blog",
       description: data
         ? data.publication.post?.subtitle
         : "My thoughts in text.",
@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     twitter: {
-      title: data.publication.post?.title ?? "Blog – Achmad Anshori",
+      title: data.publication.post?.title ?? "Blog",
       description: data
         ? data.publication.post?.subtitle
         : "My thoughts in text.",

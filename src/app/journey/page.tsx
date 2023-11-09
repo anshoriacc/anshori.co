@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://anshori.co/journey",
-    title: "Journey – Achmad Anshori",
+    title: "Journey",
     description: "The journey I've been through so far.",
     siteName: "Achmad Anshori",
   },
@@ -49,7 +49,8 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Journey – Achmad Anshori",
+    title: "Journey",
+    description: "The journey I've been through so far.",
     card: "summary_large_image",
   },
 };
