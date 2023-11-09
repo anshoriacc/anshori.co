@@ -1,4 +1,5 @@
 import { Metadata, NextPage } from "next";
+import { notFound } from "next/navigation";
 import { gql } from "@apollo/client";
 import Image from "next/image";
 import dayjs from "dayjs";
@@ -38,10 +39,12 @@ const postsQuery = gql`
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
 
-  const { data } = await getClientOld().query<Response>({
-    query: postsQuery,
-    variables: { slug },
-  });
+  const { data } = await getClientOld()
+    .query<Response>({
+      query: postsQuery,
+      variables: { slug },
+    })
+    .catch(() => notFound());
 
   return {
     title: data.post.title ?? "Blog – Achmad Anshori",
