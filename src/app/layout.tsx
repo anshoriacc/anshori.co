@@ -23,7 +23,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://anshori.co",
-    title: "Achmad Anshori",
+    title: {
+      default: "Achmad Anshori",
+      template: "%s – Achmad Anshori",
+    },
     description: "a Software Engineer, Frontend.",
     siteName: "Achmad Anshori",
   },
@@ -36,7 +39,10 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Achmad Anshori",
+    title: {
+      default: "Achmad Anshori",
+      template: "%s – Achmad Anshori",
+    },
     card: "summary_large_image",
   },
 };

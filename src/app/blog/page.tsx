@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://anshori.co/blog",
-    title: "Blog – Achmad Anshori",
+    title: "Blog",
     description: "My thoughts in text.",
     siteName: "Achmad Anshori",
   },
@@ -22,7 +22,8 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Blog – Achmad Anshori",
+    title: "Blog",
+    description: "My thoughts in text.",
     card: "summary_large_image",
   },
 };
