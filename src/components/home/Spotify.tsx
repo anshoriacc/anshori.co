@@ -4,7 +4,7 @@ import Link from "next/link";
 import useSWR from "swr";
 
 import { FaSpotify } from "react-icons/fa";
-import { fetcher } from "@/services/spotifyApi";
+import { fetcher } from "@/utils/spotifyApi";
 
 const Spotify: React.FC = () => {
   const { isLoading, data } = useSWR("api/currently-playing", fetcher);

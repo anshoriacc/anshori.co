@@ -58,11 +58,9 @@ const JourneyPage: React.FC = () => {
   return (
     <main className="p-6 flex-1 flex flex-col gap-4">
       {/* title */}
-      <div className="flex flex-col gap-2">
-        <h2 className="text-gray-500">
-          The journey I&apos;ve been through so far.
-        </h2>
-      </div>
+      <h2 className="text-gray-500">
+        The journey I&apos;ve been through so far.
+      </h2>
 
       {/* experiences */}
       <h2 className="h2-page text-2xl font-black m-0">Experiences</h2>
