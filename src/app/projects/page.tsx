@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, NextPage } from "next";
 
 import Project from "@/components/Project";
 
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ProjectsPage: React.FC = () => {
+const ProjectsPage: NextPage = () => {
   return (
     <main className="p-6 flex-1 flex flex-col gap-4">
       {/* title */}
