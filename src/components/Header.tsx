@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { MdClose, MdMenu } from "react-icons/md";
-import clsx from "clsx";
+
 import useClickOutside from "@/hooks/useClickOutside";
 
 const navLinks = [

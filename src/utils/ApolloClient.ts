@@ -9,12 +9,3 @@ export const { getClient } = registerApolloClient(() => {
     }),
   });
 });
-
-export const { getClient: getClientOld } = registerApolloClient(() => {
-  return new ApolloClient({
-    cache: new InMemoryCache(),
-    link: new HttpLink({
-      uri: "https://api.hashnode.com/graphql",
-    }),
-  });
-});

@@ -56,6 +56,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     variables: { slug },
   });
 
+  console.log("data", data);
+
   return {
     title: data.publication.post?.title ?? "Blog",
     description: data.publication.post?.subtitle ?? "My thoughts in text.",
