@@ -28,7 +28,7 @@ type Props = {
 };
 
 const postQuery = gql`
-  query SinglePostByPublication($slug: String!) {
+  query Publication($slug: String!) {
     publication(host: "anshori.co/blog") {
       post(slug: $slug) {
         title
@@ -56,7 +56,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     variables: { slug },
   });
 
-  console.log("data", data);
+  console.log("slug meta", slug);
+  console.log("data meta", data);
 
   return {
     title: data.publication.post?.title ?? "Blog",
@@ -98,7 +99,10 @@ const BlogPostPage: NextPage<Props> = async ({ params }) => {
     variables: { slug },
   });
 
-  if (data.publication.post === null) {
+  console.log("slug post", slug);
+  console.log("data post", data);
+
+  if (data && data.publication.post === null) {
     return notFound();
   }
 
