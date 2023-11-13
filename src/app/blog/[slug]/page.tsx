@@ -102,9 +102,9 @@ const BlogPostPage: NextPage<Props> = async ({ params }) => {
   console.log("slug post", slug);
   console.log("data post", data);
 
-  // if (data.publication.post === null) {
-  //   return notFound();
-  // }
+  if (data && data.publication.post === null) {
+    return notFound();
+  }
 
   return (
     <main className="p-6 flex-1 flex flex-col gap-4">
