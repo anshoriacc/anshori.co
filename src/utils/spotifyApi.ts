@@ -1,4 +1,5 @@
 import axios from "axios";
+import dayjs from "dayjs";
 
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
 const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
@@ -31,6 +32,7 @@ export const getCurrentlyPlaying = async () => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    params: { timestamp: dayjs().unix() },
   });
 };
 

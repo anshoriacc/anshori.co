@@ -7,7 +7,6 @@ import clsx from "clsx";
 import "./globals.css";
 
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,7 +57,6 @@ const RootLayout: React.FC<TProps> = ({ children }) => {
       >
         <Header />
         {children}
-        <Footer />
         <Analytics mode={"production"} />
       </body>
     </html>
