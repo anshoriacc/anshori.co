@@ -32,11 +32,12 @@ export const getCurrentlyPlaying = async () => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    params: { timestamp: dayjs().unix() },
   });
 };
 
 export const fetcher = async (url: string) => {
-  const res = await axios.get(url);
+  const res = await axios.get(url, {
+    params: { timestamp: dayjs().unix() },
+  });
   return res.data;
 };
