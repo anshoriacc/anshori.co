@@ -31,11 +31,15 @@ export const getCurrentlyPlaying = async () => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-cache",
   });
 };
 
 export const fetcher = async (url: string) => {
-  const res = await fetch(url, { cache: "no-cache" });
+  const res = await fetch(url, {
+    cache: "no-cache",
+    headers: {
+      "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+    },
+  });
   return res.json();
 };
