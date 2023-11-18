@@ -10,11 +10,11 @@ export type TCurrentlyPlayingType = {
 export async function GET() {
   const response = await getCurrentlyPlaying();
 
-  if (response.status === 204 || response.status > 400) {
+  if (!response.ok) {
     return Response.json({ isPlaying: false });
   }
 
-  const song = await response.data;
+  const song = await response.json();
 
   if (song.item === null) {
     return Response.json({ isPlaying: false });
