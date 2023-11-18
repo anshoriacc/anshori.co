@@ -1,5 +1,4 @@
 import axios from "axios";
-import dayjs from "dayjs";
 
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
 const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
@@ -27,17 +26,16 @@ const getAccessToken = async () => {
 export const getCurrentlyPlaying = async () => {
   const { access_token } = await getAccessToken();
 
-  return axios(CURRENTLY_PLAYING_ENDPOINT, {
+  return fetch(CURRENTLY_PLAYING_ENDPOINT, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-cache",
   });
 };
 
 export const fetcher = async (url: string) => {
-  const res = await axios.get(url, {
-    params: { timestamp: dayjs().unix() },
-  });
-  return res.data;
+  const res = await fetch(url);
+  return res.json();
 };
