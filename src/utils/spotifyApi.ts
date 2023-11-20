@@ -26,7 +26,7 @@ const getAccessToken = async () => {
 export const getCurrentlyPlaying = async () => {
   const { access_token } = await getAccessToken();
 
-  return fetch(CURRENTLY_PLAYING_ENDPOINT, {
+  return axios(CURRENTLY_PLAYING_ENDPOINT, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${access_token}`,
@@ -35,11 +35,6 @@ export const getCurrentlyPlaying = async () => {
 };
 
 export const fetcher = async (url: string) => {
-  const res = await fetch(url, {
-    cache: "no-cache",
-    headers: {
-      "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
-    },
-  });
-  return res.json();
+  const res = await axios(url);
+  return res.data;
 };

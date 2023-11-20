@@ -1,4 +1,5 @@
 import { getCurrentlyPlaying } from "@/utils/spotifyApi";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export type TCurrentlyPlayingType = {
   isPlaying: boolean;
@@ -7,17 +8,20 @@ export type TCurrentlyPlayingType = {
   songUrl?: string;
 };
 
-export async function GET() {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<TCurrentlyPlayingType>
+) {
   const response = await getCurrentlyPlaying();
 
-  if (!response.ok) {
-    return Response.json({ isPlaying: false });
+  if (response.status === 204 || response.status > 400) {
+    return res.status(200).json({ isPlaying: false });
   }
 
-  const song = await response.json();
+  const song = await response.data;
 
   if (song.item === null) {
-    return Response.json({ isPlaying: false });
+    return res.status(200).json({ isPlaying: false });
   }
 
   const isPlaying = song.is_playing;
@@ -27,5 +31,5 @@ export async function GET() {
     .join(", ");
   const songUrl = song.item.external_urls.spotify;
 
-  return Response.json({ isPlaying, title, artist, songUrl });
+  return res.status(200).json({ isPlaying, title, artist, songUrl });
 }
