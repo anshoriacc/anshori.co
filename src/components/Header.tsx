@@ -37,7 +37,7 @@ const Header: React.FC = () => {
   return (
     <header className="p-6 flex justify-between items-center">
       <Link href="/" className="text-3xl font-black text-white">
-        {pathname.split("/")[1] || "anshori"}.
+        {pathname === "/projects" ? "projects" : "anshori"}.
       </Link>
 
       <nav className="flex gap-3 text-gray-500 font-bold">
