@@ -4,19 +4,15 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "cdn.hashnode.com",
-      },
-    ],
-  },
-
   redirects: async () => [
     {
       source: "/spotify",
       destination: "https://open.spotify.com/user/312wkcarckpr64ibtf3jvgnvpnyi",
+      permanent: true,
+    },
+    {
+      source: "/resume",
+      destination: "/resume.pdf",
       permanent: true,
     },
     {
