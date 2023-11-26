@@ -52,7 +52,7 @@ const RootLayout: React.FC<TProps> = ({ children }) => {
       <body
         className={clsx(
           inter.className,
-          "min-h-screen bg-gray-900 text-white max-w-[640px] mx-auto pt-[5vh] flex flex-col"
+          "min-h-screen bg-gray-900 text-white max-w-[640px] mx-auto pt-[25vh] flex flex-col"
         )}
       >
         <Header />
