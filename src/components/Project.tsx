@@ -11,8 +11,8 @@ type TProps = {
 
 const Project: React.FC<TProps> = ({ data }) => {
   return (
-    <div className="">
-      <div className="list relative py-2 grid grid-cols-[36px_1fr] gap-4 items-center">
+    <div className="group">
+      <div className="list relative py-2 grid grid-cols-[40px_1fr] gap-4 items-center">
         <Image
           src={data.image}
           alt={data.title}
@@ -20,6 +20,7 @@ const Project: React.FC<TProps> = ({ data }) => {
           height={36}
           priority
           draggable={false}
+          className="mx-auto group-hover:w-10 transition-all"
         />
         <div>
           <div className="flex gap-2">
