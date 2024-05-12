@@ -13,6 +13,15 @@ export type TProject = {
 
 const projects: TProject[] = [
   {
+    title: "Diaspora Muda Sumenep",
+    image: "/images/diasporamudasumenep.svg",
+    description:
+      "Home for Diaspora Muda Sumenep, built with nextjs & laravel.",
+    year: "2024",
+    url: "https://diasporamudasumenep.com/",
+    repositoryUrl: "",
+  },
+  {
     title: "G19 Tour & Travel",
     image: "/images/g19.svg",
     description:
