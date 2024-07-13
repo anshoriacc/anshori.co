@@ -9,7 +9,7 @@ import {
 
 const links = [
   {
-    href: "/resume.pdf",
+    href: "https://cv-anshori.vercel.app",
     label: "resume",
     icon: <FaFileDownload />,
   },

@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     },
     description: "a Software Engineer, Frontend.",
     siteName: "Achmad Anshori",
+    images: "/android-chrome-512x512.png",
   },
   robots: {
     index: true,
