@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
     },
-    sitemap: "https://anshori.co/sitemap.xml",
-    host: "https://anshori.co",
+    sitemap: "https://anshori.vercel.app/sitemap.xml",
+    host: "https://anshori.vercel.app",
   };
 }

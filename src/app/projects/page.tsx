@@ -15,26 +15,6 @@ export type TProject = {
 export const metadata: Metadata = {
   title: "Projects",
   description: "The projects I've worked.",
-  openGraph: {
-    type: "website",
-    url: "https://anshori.co/projects",
-    title: "Projects",
-    description: "The projects I've worked.",
-    siteName: "Achmad Anshori",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
-  twitter: {
-    title: "Projects",
-    description: "The projects I've worked.",
-    card: "summary",
-  },
 };
 
 const ProjectsPage: NextPage = () => {

@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 type TProps = { children: React.ReactNode };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://anshori.co"),
+  metadataBase: new URL("https://anshori.vercel.app"),
   title: {
     default: "Achmad Anshori",
     template: "%s – Achmad Anshori",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: "a Software Engineer, Frontend.",
   openGraph: {
     type: "website",
-    url: "https://anshori.co",
+    url: "https://anshori.vercel.app",
     title: {
       default: "Achmad Anshori",
       template: "%s – Achmad Anshori",
@@ -30,20 +30,12 @@ export const metadata: Metadata = {
     siteName: "Achmad Anshori",
     images: "/android-chrome-512x512.png",
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
   twitter: {
     title: {
       default: "Achmad Anshori",
       template: "%s – Achmad Anshori",
     },
-    card: "summary_large_image",
+    card: "summary",
   },
 };
 
