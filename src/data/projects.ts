@@ -21,7 +21,7 @@ export const projects: TProject[] = [
     },
     {
       title: "anshori.co",
-      image: "/android-chrome-512x512.png",
+      image: "/512x512.png",
       description: "My personal and portfolio website using nextjs.",
       year: "2023",
       url: "/",
