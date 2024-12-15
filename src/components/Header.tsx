@@ -1,48 +1,28 @@
-"use client";
-
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const navLinks = [
-  { href: "/", label: "home", title: "anshori" },
-  { href: "/projects", label: "projects", title: "projects" },
-];
-
-const Navigations: React.FC = () => {
-  const pathname = usePathname();
-
+const Header = () => {
   return (
-    <>
-      {navLinks.map((link) => {
-        const isActive = link.href === pathname;
-        return (
-          <Link
-            href={link.href}
-            key={link.href}
-            className={
-              isActive ? "text-white" : "hover:text-white transition-all"
-            }
-          >
-            {link.label}
-          </Link>
-        );
-      })}
-    </>
-  );
-};
+    <header className="fixed left-1/2 top-4 flex h-12 w-[156px] -translate-x-1/2 items-center justify-between gap-3 rounded-2xl bg-black px-3 text-neutral-50 shadow transition-all hover:w-80 duration-300">
+      <Link href="/" className="group flex items-center gap-0.5">
+        {/* <span className="relative flex size-4 items-center justify-center">
+          <span className="absolute inline-flex size-4 rounded-full duration- bg-red-400 group-hover:animate-ping" />
+          <span className="relative inline-flex size-4 rounded-full bg-red-500" />
+        </span> */}
 
-const Header: React.FC = () => {
-  const pathname = usePathname();
-
-  return (
-    <header className="p-6 flex justify-between items-center">
-      <Link href="/" className="text-3xl font-black text-white">
-        {pathname === "/projects" ? "projects" : "anshori"}.
+        <svg className="h-6 w-24 fill-neutral-50">
+          {/* <circle cx={12} cy={12} r={6} className="fill-red-500"></circle> */}
+          <text
+            x={2}
+            y={19}
+            className="fill-neutral-50 stroke-2 text-2xl font-bold transition-all group-hover:fill-black group-hover:stroke-neutral-50"
+            paintOrder="stroke fill">
+            anshori
+            {/* <tspan className="fill-red-500 stroke-none">.</tspan> */}
+          </text>
+        </svg>
       </Link>
 
-      <nav className="flex gap-3 text-gray-500 font-bold">
-        <Navigations />
-      </nav>
+      <div className="size-6 rounded bg-neutral-50" />
     </header>
   );
 };

@@ -23,21 +23,3 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #646464;
 }
-
-.h2-page:hover::before {
-  content: "#";
-  position: absolute;
-  translate: -20px;
-  @apply text-gray-500;
-}
-
-.list:hover::before {
-  content: "";
-  position: absolute;
-  height: 24px;
-  width: 3px;
-  top: 50%;
-  translate: -20px -50%;
-  border-radius: 24px;
-  @apply text-gray-500 bg-gray-500;
-}
