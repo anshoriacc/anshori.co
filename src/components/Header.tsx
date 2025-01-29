@@ -1,56 +1,66 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import { motion } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from "motion/react";
 
-const Header = () => {
+import { cn } from "@/lib/utils";
+
+export const Header = () => {
+  const { scrollY, scrollYProgress } = useScroll();
+  const [isActive, setIsActive] = React.useState(false);
+
+  useMotionValueEvent(scrollY, "change", latest => {
+    setIsActive(latest > 88);
+  });
+
   return (
     <motion.header
-      initial={{ width: 156, height: 48 }}
-      whileHover={{ width: 320 }}
-      transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
-      className="fixed left-1/2 top-4 flex -translate-x-1/2 items-center justify-between gap-3 rounded-2xl bg-black px-3 text-neutral-50 shadow">
-      <Link href="/" className="group flex items-center gap-0.5">
-        <svg className="h-6 w-24 fill-neutral-50">
+      animate={{ width: isActive ? 136 : 96 }}
+      transition={{ type: "spring", duration: 0.5 }}
+      className={cn(
+        "fixed left-1/2 top-4 z-10 flex h-10 -translate-x-1/2 items-center justify-between gap-4 rounded-xl bg-black px-2 text-neutral-50 shadow",
+      )}>
+      <Link href="/" className="overflow-hidden">
+        <svg className="pointer-events-none h-5 w-20 fill-neutral-50">
           <text
             x={2}
-            y={19}
-            className="fill-neutral-50 stroke-2 text-2xl font-bold transition-all group-hover:fill-black group-hover:stroke-neutral-50"
+            y={17}
+            className={cn("stroke-2 text-xl font-black")}
             paintOrder="stroke fill">
-            johndoe
+            anshori
+            <tspan className="fill-red-500 stroke-none">.</tspan>
           </text>
         </svg>
       </Link>
 
-      <motion.div
-        initial={{ height: 24, width: 24 }}
-        className="rounded bg-neutral-50"
-      />
+      <AnimatePresence>
+        {isActive && (
+          <svg
+            viewBox="0 0 100 100"
+            className="size-6 -rotate-90 [&_circle]:fill-none [&_circle]:stroke-[16]">
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+              pathLength="1"
+              className="stroke-neutral-700"
+            />
+            <motion.circle
+              cx="50"
+              cy="50"
+              r="40"
+              className="stroke-neutral-50"
+              style={{ pathLength: scrollYProgress }}
+            />
+          </svg>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };
-
-export default Header;
-
-// <header className="fixed left-1/2 top-4 flex h-12 w-[156px] -translate-x-1/2 items-center justify-between gap-3 rounded-2xl bg-black px-3 text-neutral-50 shadow transition-all duration-300 hover:w-80">
-//   <Link href="/" className="group flex items-center gap-0.5">
-//     {/* <span className="relative flex size-4 items-center justify-center">
-//     <span className="absolute inline-flex size-4 rounded-full duration- bg-red-400 group-hover:animate-ping" />
-//     <span className="relative inline-flex size-4 rounded-full bg-red-500" />
-//   </span> */}
-
-//     <svg className="h-6 w-24 fill-neutral-50">
-//       {/* <circle cx={12} cy={12} r={6} className="fill-red-500"></circle> */}
-//       <text
-//         x={2}
-//         y={19}
-//         className="fill-neutral-50 stroke-2 text-2xl font-bold transition-all group-hover:fill-black group-hover:stroke-neutral-50"
-//         paintOrder="stroke fill">
-//         johndoe
-//         {/* <tspan className="fill-red-500 stroke-none">.</tspan> */}
-//       </text>
-//     </svg>
-//   </Link>
-
-//   <div className="size-6 rounded bg-neutral-50" />
-// </header>

@@ -1,4 +1,4 @@
-import Header from "@/components/header";
+import { Header } from "@/components/header";
 
 export default function HomeLayout({
   children,
@@ -6,8 +6,8 @@ export default function HomeLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-neutral-900 text-neutral-50">
-      <div className="mx-auto min-h-[100dvh] w-full max-w-2xl p-4 pt-[88px]">
+    <div className="bg-neutral-800 text-neutral-50 cursor-default">
+      <div className="mx-auto min-h-dvh w-full max-w-[40rem] p-4 pt-[88px]">
         <Header />
 
         {children}
