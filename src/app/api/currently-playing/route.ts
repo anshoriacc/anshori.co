@@ -11,6 +11,8 @@ const BASIC_AUTH = Buffer.from(
   `${SPOTIFY_CLIENT_ID}:${SPOTIFY_CLIENT_SECRET}`,
 ).toString("base64");
 
+export const revalidate = 0;
+
 export async function GET() {
   const requestToken = await fetch(
     `${TOKEN_ENDPOINT}?grant_type=refresh_token&refresh_token=${SPOTIFY_REFRESH_TOKEN}`,
@@ -20,8 +22,6 @@ export async function GET() {
         "Content-Type": "application/x-www-form-urlencoded",
         Authorization: `Basic ${BASIC_AUTH}`,
       },
-      cache: "no-cache",
-      next: { revalidate: 0 },
     },
   ).then(res => res.json());
 
@@ -31,8 +31,6 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-cache",
-    next: { revalidate: 0 },
   })
     .then(async res => {
       const text = await res.text();
@@ -44,8 +42,6 @@ export async function GET() {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-cache",
-    next: { revalidate: 0 },
   })
     .then(async res => {
       const text = await res.text();
@@ -56,9 +52,5 @@ export async function GET() {
   return Response.json({
     currentlyPlaying,
     recentlyPlayed,
-    // BASE_URL,
-    // SPOTIFY_CLIENT_ID,
-    // SPOTIFY_CLIENT_SECRET,
-    // SPOTIFY_REFRESH_TOKEN,
   });
 }
