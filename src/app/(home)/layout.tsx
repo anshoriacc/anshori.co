@@ -7,7 +7,7 @@ export default function HomeLayout({
 }) {
   return (
     <div className="bg-neutral-800 text-neutral-50 cursor-default">
-      <div className="mx-auto min-h-dvh w-full max-w-[40rem] p-4 pt-[88px]">
+      <div className="mx-auto min-h-dvh w-full max-w-2xl p-4 pt-[88px]">
         <Header />
 
         {children}

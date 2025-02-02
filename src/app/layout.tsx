@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 
 import { BASE_URL } from "@/constants/env";
 import "./globals.css";
+import Providers from "@/components/providers";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -43,7 +44,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={plusJakartaSans.className}>{children}</body>
+      <body className={plusJakartaSans.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

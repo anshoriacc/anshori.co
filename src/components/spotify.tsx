@@ -2,12 +2,16 @@
 
 import { cn } from "@/lib/utils";
 import { Card } from "./ui/card";
+import { useGetCurrentlyPlayingQuery } from "@/hooks/api/spotify";
 
 export const Spotify = () => {
+  const currentlyPlayingQuery = useGetCurrentlyPlayingQuery();
+  const currentlyPlaying = currentlyPlayingQuery.data;
+
   return (
     <Card
       className={cn(
-        "relative z-0 flex flex-col gap-4 overflow-hidden rounded-xl bg-gradient-to-br from-transparent from-20% to-[#25d865]/25 p-6 transition-all",
+        "h-48 w-full bg-gradient-to-br from-transparent from-20% to-[#25d865]/25 p-6 transition-all sm:w-[calc(100%-216px)]",
       )}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -93,6 +97,19 @@ export const Spotify = () => {
           />
         </rect>
       </svg>
+
+      <span>
+        {!(
+          currentlyPlaying?.currentlyPlaying?.is_playing &&
+          currentlyPlaying?.currentlyPlaying?.currently_playing_type === "track"
+        ) && "offline"}
+      </span>
+      <span>
+        {currentlyPlaying?.currentlyPlaying?.is_playing &&
+        currentlyPlaying?.currentlyPlaying?.currently_playing_type === "track"
+          ? currentlyPlaying?.currentlyPlaying?.item?.name
+          : currentlyPlaying?.recentlyPlayed?.items?.[0]?.track?.name}
+      </span>
     </Card>
   );
 };
