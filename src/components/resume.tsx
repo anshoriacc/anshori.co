@@ -11,7 +11,7 @@ export const Resume = () => {
       <Card type="link" className="size-full items-center justify-center">
         <span
           className={cn(
-            "pointer-events-none absolute top-1/6 text-[216px] grayscale transition-all duration-500 select-none",
+            "pointer-events-none absolute top-1/6 text-[216px] grayscale transition-all duration-500",
             "group-hover:-translate-y-1/6 group-hover:scale-80",
           )}>
           🗒️

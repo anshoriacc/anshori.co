@@ -13,7 +13,7 @@ const Map = dynamic(() => import("./map").then(comp => comp.Map), {
   loading: () => (
     <div
       className={cn(
-        "group absolute z-401 flex size-full flex-col items-center justify-center bg-[#d4dadc] font-medium text-neutral-500 uppercase transition-all duration-300 select-none",
+        "group absolute z-401 flex size-full flex-col items-center justify-center bg-[#d4dadc] font-medium text-neutral-500 uppercase transition-all duration-300",
       )}>
       <span className="absolute top-0 right-1 text-3xl group-hover:rotate-12">
         🗺️
@@ -36,7 +36,7 @@ export const Location = () => {
 
       <div
         className={cn(
-          "group absolute z-401 flex size-full flex-col items-center justify-center font-medium text-neutral-500 uppercase transition-all duration-300 select-none",
+          "group absolute z-401 flex size-full flex-col items-center justify-center font-medium text-neutral-500 uppercase transition-all duration-300",
           "opacity-0 group-hover:opacity-100",
           "*:scale-75 *:transition-all *:duration-300 *:group-hover:scale-100",
         )}>
