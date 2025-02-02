@@ -1,19 +1,16 @@
-// @ts-ignore
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import clsx from "clsx";
+import { Plus_Jakarta_Sans } from "next/font/google";
 
+import { BASE_URL } from "@/constants/env";
 import "./globals.css";
+import Providers from "@/components/providers";
 
-import Header from "@/components/Header";
-
-const inter = Inter({ subsets: ["latin"] });
-
-type TProps = { children: React.ReactNode };
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://anshori.co"),
+  metadataBase: new URL(BASE_URL ?? "/"),
   title: {
     default: "Achmad Anshori",
     template: "%s – Achmad Anshori",
@@ -21,7 +18,7 @@ export const metadata: Metadata = {
   description: "a Software Engineer, Frontend.",
   openGraph: {
     type: "website",
-    url: "https://anshori.co",
+    url: BASE_URL,
     title: {
       default: "Achmad Anshori",
       template: "%s – Achmad Anshori",
@@ -40,21 +37,16 @@ export const metadata: Metadata = {
   },
 };
 
-const RootLayout: React.FC<TProps> = ({ children }) => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className="dark">
-      <body
-        className={clsx(
-          inter.className,
-          "min-h-screen bg-gray-900 text-white max-w-[640px] mx-auto pt-[25vh] flex flex-col"
-        )}
-      >
-        <Header />
-        {children}
-        <Analytics mode={"production"} />
+    <html lang="en">
+      <body className={plusJakartaSans.className}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}
