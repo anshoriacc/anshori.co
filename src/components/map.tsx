@@ -1,6 +1,6 @@
 "use client";
 
-import { RefAttributes, useEffect, useRef } from "react";
+import { RefAttributes, useEffect, useMemo, useRef } from "react";
 import {
   Circle,
   MapContainer,
@@ -11,21 +11,22 @@ import {
 import { LatLngExpression, Map as TMap } from "leaflet";
 import { cn } from "@/lib/utils";
 
-const jakartaCoords: LatLngExpression = [-6.2088, 106.8456];
-
-const indonesiaView = {
-  center: [-2.5489, 118.0149] as LatLngExpression,
-  zoom: 2,
+type TView = {
+  center: LatLngExpression;
+  zoom: number;
 };
 
-const jakartaView = {
-  center: jakartaCoords,
-  zoom: 8,
+type MapControllerProps = {
+  isHovered: boolean;
+  jakartaView: TView;
+  indonesiaView: TView;
 };
 
-const circleStyle = { color: "#fb2c36", weight: 1, opacity: 1, fill: false };
-
-const MapController = ({ isHovered }: { isHovered: boolean }) => {
+const MapController = ({
+  isHovered,
+  jakartaView,
+  indonesiaView,
+}: MapControllerProps) => {
   const map = useMap();
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const MapController = ({ isHovered }: { isHovered: boolean }) => {
     } else {
       map.flyTo(indonesiaView.center, indonesiaView.zoom, { duration: 1 });
     }
-  }, [isHovered, map]);
+  }, [indonesiaView, isHovered, jakartaView, map]);
 
   return null;
 };
@@ -46,6 +47,22 @@ export const Map = ({
 }: { isZoomed?: boolean } & MapContainerProps & RefAttributes<TMap>) => {
   const mapRef = useRef(null);
 
+  const indonesiaView: TView = useMemo(
+    () => ({
+      center: [-2.5489, 118.0149],
+      zoom: 2,
+    }),
+    [],
+  );
+
+  const jakartaView: TView = useMemo(
+    () => ({
+      center: [-6.2088, 106.8456],
+      zoom: 8,
+    }),
+    [],
+  );
+
   return (
     <MapContainer
       ref={mapRef}
@@ -56,20 +73,25 @@ export const Map = ({
       doubleClickZoom={false}
       dragging={false}
       attributionControl={false}
-      className={cn("pointer-events-none size-full bg-#d4dadc", className)}
+      className={cn("bg-#d4dadc pointer-events-none size-full", className)}
       {...props}>
-      <TileLayer
-        url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png" // simple
-        // url="https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg" // watercolor
-        // url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" // black
-      />
+      <TileLayer url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png" />
       <Circle
-        center={jakartaCoords}
-        radius={250000}
-        pathOptions={{ ...circleStyle, opacity: isZoomed ? 0 : 1 }}
+        center={jakartaView.center}
+        radius={200000}
+        pathOptions={{
+          color: "#fb2c36",
+          weight: 1,
+          fill: false,
+          opacity: isZoomed ? 0 : 1,
+        }}
       />
 
-      <MapController isHovered={isZoomed} />
+      <MapController
+        isHovered={isZoomed}
+        jakartaView={jakartaView}
+        indonesiaView={indonesiaView}
+      />
     </MapContainer>
   );
 };
