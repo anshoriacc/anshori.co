@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "./ui/card";
 import { cn } from "@/lib/utils";
+import { BackgroundBeams } from "./ui/background-beams";
 
 export const Profile = () => {
   return (
@@ -25,6 +26,8 @@ export const Profile = () => {
         <span>3 years of hands on experience</span>. Interested in{" "}
         <span>react</span>, <span>next.js</span>, and <span>node.js</span>.
       </p>
+
+      <BackgroundBeams className="z-0" />
     </Card>
   );
 };
